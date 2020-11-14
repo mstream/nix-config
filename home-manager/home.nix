@@ -8,6 +8,8 @@
   home.sessionVariables = {
     BROWSER = "firefox";
     EDITOR = "nvim";
+    SHELL = "zsh";
+    VISUAL = "nvim";
   };
 
   home.packages = [
