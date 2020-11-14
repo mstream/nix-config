@@ -5,6 +5,11 @@
   home.homeDirectory = "/Users/mstream";
   home.stateVersion = "20.09";
 
+  home.sessionVariables = {
+    BROWSER = "firefox";
+    EDITOR = "nvim";
+  };
+
   home.packages = [
   ];
 
