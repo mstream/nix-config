@@ -13,7 +13,8 @@
     VISUAL = "nvim";
   };
 
-  home.packages = [
+  home.packages = with pkgs; [
+    nodejs-12_x
   ];
 
   programs = import ./programs pkgs;
