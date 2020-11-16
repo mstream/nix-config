@@ -1,11 +1,14 @@
 { pkgs, ... }:
 
-{
-  direnv = import ./direnv pkgs;
-  git = import ./git pkgs;
-  home-manager.enable = true;
-  kitty = import ./kitty pkgs;
-  neovim = import ./neovim pkgs;
-  password-store = import ./password-store pkgs;
-  zsh = import ./zsh pkgs;
+let
+  importConfig = path : import path { inherit pkgs; };
+in {
+  direnv = importConfig ./direnv;
+  git = importConfig ./git;
+  gpg = importConfig ./gpg;
+  home-manager = importConfig ./home-manager;
+  kitty = importConfig ./kitty;
+  neovim = importConfig ./neovim;
+  password-store = importConfig ./password-store;
+  zsh = importConfig ./zsh;
 }
