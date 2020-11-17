@@ -11,5 +11,6 @@ with pkgs.vimPlugins; [
   coc-yaml
   dhall-vim
   purescript-vim
+  vim-airline
 ]
 

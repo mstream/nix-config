@@ -5,9 +5,9 @@ set   expandtab
 set   hidden
 set   number
 set   relativenumber 
+set   rulerformat=%l,%v
 set   shortmess+=c
 set   signcolumn=yes
-set   statusline^=%{coc#status()}%{get(b:,'coc_current_function',\'\')}
 set   tabstop=2
 set   updatetime=300
 set nowrap
