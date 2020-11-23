@@ -16,6 +16,7 @@
   home.packages = with pkgs; [
     dhall-lsp-server
     nodejs-12_x
+    rnix-lsp
   ];
 
   imports = [ ./programs ];
