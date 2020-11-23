@@ -15,6 +15,7 @@
 
   home.packages = with pkgs; [
     dhall-lsp-server
+    idris2
     nodejs-12_x
     rnix-lsp
   ];
