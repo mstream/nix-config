@@ -1,7 +1,9 @@
 { ... }:
 
 {
-  enable = true;
-  enableNixDirenvIntegration = true;
+  programs.direnv = {
+    enable = true;
+    enableNixDirenvIntegration = true;
+    };
 }
 

@@ -1,8 +1,5 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
-let
-  coc = import ./coc.nix;
-in 
 {
   home.username = "mstream";
   home.homeDirectory = "/Users/mstream";
@@ -21,10 +18,6 @@ in
     nodejs-12_x
   ];
 
-  programs = import ./programs pkgs;
-
-  xdg.configFile."nvim/coc-settings.json".source =
-      builtins.toFile "coc-settings.json" 
-                      (builtins.toJSON (coc { inherit config; }));
+  imports = [ ./programs ];
 }
 

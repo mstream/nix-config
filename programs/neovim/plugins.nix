@@ -2,6 +2,7 @@
 
 with pkgs.vimPlugins; [
   coc-git
+  coc-highlight
   coc-html
   coc-java
   coc-json

@@ -1,6 +1,7 @@
 { ... }:
 
 {
+  programs.git = {
   enable = true;
   extraConfig = {
     core = {
@@ -9,5 +10,6 @@
   };
   userName = "mstream";
   userEmail = "maciej.laciak@gmail.com";
+  };
 }
 

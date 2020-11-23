@@ -1,6 +1,7 @@
 { ... }:
 
 {
+  programs.kitty = {
   enable = true;
   settings = {
     background_opacity = "0.9";
@@ -12,6 +13,7 @@
     scrollback_lines = 2000;
     sync_to_monitor = "yes";
     window_alert_on_bell = "yes";
+  };
   };
 }
 

@@ -13,10 +13,11 @@ set   updatetime=300
 set nowrap
 set nowritebackup
 
-for key in ['<Up>', '<Down>', '<Left>', '<Right>']
-  exec 'noremap' key '<Nop>'
-  exec 'inoremap' key '<Nop>'
-  exec 'cnoremap' key '<Nop>'
+for remap_mode in ['noremap', 'inoremap', 'cnoremap']
+  exec remap_mode '<Up>' '<Nop>' 
+  exec remap_mode '<Down>' '<Nop>' 
+  exec remap_mode '<Right>' '<Nop>' 
+  exec remap_mode '<Left>' '<Nop>' 
 endfor
 
 inoremap <silent><expr> <TAB>
