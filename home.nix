@@ -17,7 +17,9 @@
     dhall-lsp-server
     idris2
     nodejs-12_x
+    nodePackages.purescript-language-server
     rnix-lsp
+    spago
   ];
 
   imports = [ ./programs ];

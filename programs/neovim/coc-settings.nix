@@ -10,8 +10,19 @@
       filetypes = [ "dhall" ];
     };
     nix = {
-      "command" = "rnix-lsp";
-      "filetypes" = [ "nix" ];
+      command = "rnix-lsp";
+      filetypes = [ "nix" ];
+    };
+    purescript = {
+      command = "purescript-language-server";
+      args = [ "--stdio" ]; 
+      filetypes = [ "purescript" ];
+      rootPatterns = [ "spago.dhall" ];
+      settings = {
+        purescript = {
+          addSpagoSources = true;
+        };
+      };
     };
   };
 }
