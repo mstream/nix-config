@@ -13,5 +13,6 @@ with pkgs.vimPlugins; [
   dhall-vim
   purescript-vim
   vim-airline
+  vim-surround
 ]
 
