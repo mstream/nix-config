@@ -13,7 +13,7 @@ set   updatetime=300
 set nowrap
 set nowritebackup
 
-for remap_mode in ['noremap', 'inoremap', 'cnoremap']
+for remap_mode in ['cnoremap', 'inoremap', 'noremap']
   exec remap_mode '<Up>' '<Nop>' 
   exec remap_mode '<Down>' '<Nop>' 
   exec remap_mode '<Right>' '<Nop>' 
@@ -63,14 +63,16 @@ nmap <leader>rn <Plug>(coc-rename)
 xmap <leader>f  <Plug>(coc-format-selected)
 nmap <leader>f  <Plug>(coc-format-selected)
 
-
 augroup mygroup
   autocmd!
-  " Setup formatexpr specified filetype(s).
   autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
-  " Update signature help on jump placeholder.
   autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
 augroup end
+
+augroup neovim_terminal
+    autocmd!
+    autocmd TermOpen * :set nonumber norelativenumber
+augroup END
 
 xmap <leader>a  <Plug>(coc-codeaction-selected)
 nmap <leader>a  <Plug>(coc-codeaction-selected)
