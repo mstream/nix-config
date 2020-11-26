@@ -14,12 +14,7 @@
   };
 
   home.packages = with pkgs; [
-    dhall-lsp-server
-    fzf
     idris2
-    nodejs-12_x
-    nodePackages.purescript-language-server
-    rnix-lsp
     spago
   ];
 

@@ -2,14 +2,16 @@
 
 let
   cocSettings = builtins.import ./coc-settings.nix;
+  extraConfig = builtins.readFile ./init.vim;
 
 in
 {
+  imports = [ ./plugins.nix ];
+
   programs.neovim = 
   {
-    enable = true;
-    extraConfig = import ./config.nix; 
-    plugins = import ./plugins.nix pkgs;
+    inherit extraConfig;
+    enable = true; 
     viAlias = true;
     vimAlias = true;
     vimdiffAlias = true;
