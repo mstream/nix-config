@@ -35,10 +35,5 @@
         };
       };
     };
-    vim = {
-      command = "vim-language-server";
-      args = [ "stdio" ];
-      filetypes = [ "vim" ];
-};
   };
 }
