@@ -11,8 +11,6 @@
     rnix-lsp
   ];
 
-
-  
   programs.neovim.plugins = with pkgs.vimPlugins; [
     coc-css
     coc-emmet
@@ -43,6 +41,7 @@
     coc-yaml
     dhall-vim
     emmet-vim
+    gruvbox
     indentLine
     purescript-vim
     vim-airline

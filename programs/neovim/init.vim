@@ -1,3 +1,6 @@
+let g:gruvbox_contrast_dark="hard"
+let g:gruvbox_italic=1
+
 set   autoindent 
 set   background=dark
 set nobackup
@@ -8,6 +11,7 @@ set   expandtab
 set   fileencoding=utf-8
 set   fileformat=unix
 set   fixendofline
+set   notermguicolors
 set   hidden
 set   ignorecase
 set   number
@@ -22,7 +26,6 @@ set   tabstop=2
 set   updatetime=300
 set nowrap
 set nowritebackup
-
 
 cnoremap <Up> <NOP>
 cnoremap <Down> <NOP>
@@ -51,6 +54,11 @@ xnoremap <Down> <NOP>
 xnoremap <Right> <NOP>
 xnoremap <Left> <NOP>
 
+augroup gruvbox
+  autocmd!
+  autocmd VimEnter * ++nested colorscheme gruvbox
+augroup END
+
 augroup terminal
   autocmd!
   autocmd TermOpen * :setlocal 
@@ -58,6 +66,4 @@ augroup terminal
                    \ norelativenumber 
                    \ signcolumn=no
 augroup END
-
-
 
