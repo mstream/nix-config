@@ -29,6 +29,7 @@
     coc-python
     coc-r-lsp
     coc-rls
+    coc-smartf
     coc-solargraph
     coc-snippets
     coc-stylelint
