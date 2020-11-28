@@ -9,6 +9,7 @@ set   fileencoding=utf-8
 set   fileformat=unix
 set   fixendofline
 set   hidden
+set   ignorecase
 set   number
 set   relativenumber 
 set   rulerformat=%l,%v
@@ -16,15 +17,24 @@ set   shiftwidth=2
 set   shortmess+=c
 set   showtabline=1 
 set   signcolumn=yes
+set   smartcase
 set   tabstop=2
 set   updatetime=300
 set nowrap
 set nowritebackup
 
+
+cnoremap <Up> <NOP>
+cnoremap <Down> <NOP>
+cnoremap <Right> <NOP>
+cnoremap <Left> <NOP>
+
 inoremap <Up> <NOP>
 inoremap <Down> <NOP>
 inoremap <Right> <NOP>
 inoremap <Left> <NOP>
+
+inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
 nnoremap <Up> <NOP>
 nnoremap <Down> <NOP>
@@ -43,7 +53,10 @@ xnoremap <Left> <NOP>
 
 augroup terminal
   autocmd!
-  autocmd TermOpen * :set nonumber norelativenumber
+  autocmd TermOpen * :setlocal 
+                   \ nonumber 
+                   \ norelativenumber 
+                   \ signcolumn=no
 augroup END
 
 
