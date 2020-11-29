@@ -8,6 +8,7 @@
     nodePackages.dockerfile-language-server-nodejs
     nodePackages.purescript-language-server
     purescript
+    ripgrep
     rnix-lsp
   ];
 

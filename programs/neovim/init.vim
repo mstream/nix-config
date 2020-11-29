@@ -1,5 +1,17 @@
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  elseif (coc#rpc#ready())
+    call CocActionAsync('doHover')
+  else
+    execute '!' . &keywordprg . " " . expand('<cword>')
+  endif
+endfunction
+
 let g:gruvbox_contrast_dark="hard"
 let g:gruvbox_italic=1
+let g:mapleader=" "
+let g:timeoutlen=2000
 
 set   autoindent 
 set   background=dark
@@ -36,15 +48,17 @@ inoremap <Up> <NOP>
 inoremap <Down> <NOP>
 inoremap <Right> <NOP>
 inoremap <Left> <NOP>
-inoremap <expr> <Tab> pumvisible() 
-                      \ ? "\<C-n>" 
-                      \ : "\<Tab>"
-
-inoremap <expr> <S-Tab> pumvisible() 
+inoremap <unique> <A-h> <C-\><C-N><C-w>h
+inoremap <unique> <A-j> <C-\><C-N><C-w>j
+inoremap <unique> <A-k> <C-\><C-N><C-w>k
+inoremap <A-l> <C-\><C-N><C-w>l
+inoremap <expr><unique> <Tab> pumvisible()
+                               \ ? "\<C-n>" 
+                               \ : "\<Tab>"
+inoremap <expr><unique> <S-Tab> pumvisible() 
                         \ ? "\<C-p>" 
                         \ : "\<S-Tab>"
-
- inoremap <silent><expr> <CR> pumvisible() 
+inoremap <expr> <CR> pumvisible() 
                               \ ? coc#_select_confirm() 
                               \ : "\<C-g>u\<CR>\<C-r>=coc#on_enter()\<CR>"
 
@@ -52,21 +66,48 @@ nmap f <Plug>(coc-smartf-forward)
 nmap F <Plug>(coc-smartf-backward)
 nmap ; <Plug>(coc-smartf-repeat)
 nmap , <Plug>(coc-smartf-repeat-opposite)
+nmap <unique> <Leader>cs <Plug>(coc-rename)
+nmap <unique> <Leader>g[ <Plug>(coc-diagnostic-prev)
+nmap <unique> <Leader>g] <Plug>(coc-diagnostic-next)
+nmap <unique> <Leader>gd <Plug>(coc-definition)
+nmap <unique> <Leader>gy <Plug>(coc-type-definition)
+nmap <unique> <Leader>gi <Plug>(coc-implementation)
+nmap <unique> <Leader>gr <Plug>(coc-references)
 
 nnoremap <Up> <NOP>
 nnoremap <Down> <NOP>
 nnoremap <Right> <NOP>
 nnoremap <Left> <NOP>
+nnoremap <unique> <A-h> <C-w>h
+nnoremap <unique> <A-j> <C-w>j
+nnoremap <unique> <A-k> <C-w>k
+nnoremap <unique> <A-l> <C-w>l
+nnoremap <unique> <Leader>lb :CocList buffers<CR>
+nnoremap <unique> <Leader>ld :CocList diagnostics<CR>
+nnoremap <unique> <Leader>lf :CocList files<CR>
+nnoremap <unique> <Leader>lg :CocList grep<CR>
+nnoremap <unique> <Leader>ls :CocList snippets<CR>
+nnoremap <unique> <Leader>ly :CocList yank<CR>
+nnoremap <unique> <Leader>sd :call <SID>show_documentation()<CR>
 
 tnoremap <Up> <NOP>
 tnoremap <Down> <NOP>
 tnoremap <Right> <NOP>
 tnoremap <Left> <NOP>
+tnoremap <unique> <A-h> <C-\><C-N><C-w>h
+tnoremap <unique> <A-j> <C-\><C-N><C-w>j
+tnoremap <unique> <A-k> <C-\><C-N><C-w>k
+tnoremap <unique> <A-l> <C-\><C-N><C-w>l
 
 xnoremap <Up> <NOP>
 xnoremap <Down> <NOP>
 xnoremap <Right> <NOP>
 xnoremap <Left> <NOP>
+
+augroup coc
+  autocmd!
+  autocmd CursorHold * call CocActionAsync('highlight')
+augroup END
 
 augroup gruvbox
   autocmd!
@@ -87,5 +128,7 @@ augroup terminal
                      \ nonumber 
                      \ norelativenumber 
                      \ signcolumn=no
+  autocmd TermOpen * startinsert
+  autocmd BufEnter term://* startinsert
 augroup END
 
