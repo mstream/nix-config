@@ -82,6 +82,8 @@ nnoremap <unique> <A-h> <C-w>h
 nnoremap <unique> <A-j> <C-w>j
 nnoremap <unique> <A-k> <C-w>k
 nnoremap <unique> <A-l> <C-w>l
+nnoremap <unique> <Leader>a :CocActions<CR>
+nnoremap <unique> <Leader>c :CocCommands<CR>
 nnoremap <unique> <Leader>lb :CocList buffers<CR>
 nnoremap <unique> <Leader>ld :CocList diagnostics<CR>
 nnoremap <unique> <Leader>lf :CocList files<CR>
