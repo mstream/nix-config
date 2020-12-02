@@ -15,9 +15,9 @@
 
   home.packages = with pkgs; [
     idris2
+    nixpkgs-fmt
     spago
   ];
 
   imports = [ ./programs ];
 }
-

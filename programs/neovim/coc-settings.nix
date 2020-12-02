@@ -1,7 +1,7 @@
 { config, ... }:
 
 {
-  diagnostic = { 
+  diagnostic = {
     checkCurrentLine = true;
   };
   languageserver = {
@@ -26,7 +26,7 @@
     };
     purescript = {
       command = "purescript-language-server";
-      args = [ "--stdio" ]; 
+      args = [ "--stdio" ];
       filetypes = [ "purescript" ];
       rootPatterns = [ "spago.dhall" ];
       settings = {

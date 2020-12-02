@@ -2,7 +2,6 @@
 
 {
   programs.password-store = {
-  enable = true;
-};  
+    enable = true;
+  };
 }
-

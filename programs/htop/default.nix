@@ -6,6 +6,5 @@
     enable = true;
     enableMouse = false;
     vimMode = true;
-    };
+  };
 }
-
