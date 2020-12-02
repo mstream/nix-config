@@ -14,6 +14,7 @@
   };
 
   home.packages = with pkgs; [
+    gimp
     idris2
     nixpkgs-fmt
     spago
