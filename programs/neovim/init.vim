@@ -8,10 +8,14 @@ function! s:show_documentation()
   endif
 endfunction
 
+syntax on
+filetype on
+filetype plugin indent on
+
 let g:gruvbox_contrast_dark="hard"
 let g:gruvbox_italic=1
 let g:mapleader=" "
-let g:timeoutlen=2000
+let g:timeoutlen=1500
 
 set   autoindent 
 set   background=dark
@@ -82,8 +86,8 @@ nnoremap <unique> <A-h> <C-w>h
 nnoremap <unique> <A-j> <C-w>j
 nnoremap <unique> <A-k> <C-w>k
 nnoremap <unique> <A-l> <C-w>l
-nnoremap <unique> <Leader>a :CocActions<CR>
-nnoremap <unique> <Leader>c :CocCommands<CR>
+nnoremap <unique> <Leader>a :CocAction<CR>
+nnoremap <unique> <Leader>c :CocCommand<CR>
 nnoremap <unique> <Leader>lb :CocList buffers<CR>
 nnoremap <unique> <Leader>ld :CocList diagnostics<CR>
 nnoremap <unique> <Leader>lf :CocList files<CR>
@@ -105,6 +109,11 @@ xnoremap <Up> <NOP>
 xnoremap <Down> <NOP>
 xnoremap <Right> <NOP>
 xnoremap <Left> <NOP>
+
+augroup autoindent
+  autocmd!
+  autocmd BufWrite * :Autoformat
+augroup END
 
 augroup coc
   autocmd!

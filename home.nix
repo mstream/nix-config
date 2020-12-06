@@ -14,9 +14,11 @@
   };
 
   home.packages = with pkgs; [
+    dhall-bash
+    dhall-json
+    dhall-nix
     gimp
     idris2
-    nixpkgs-fmt
     spago
   ];
 

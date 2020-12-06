@@ -2,14 +2,27 @@
 
 {
   home.packages = with pkgs; [
+    astyle
+    dhall
     dhall-lsp-server
+    go
+    html-tidy
+    llvm
+    nixfmt
     nodejs-12_x
     nodePackages.bash-language-server
     nodePackages.dockerfile-language-server-nodejs
+    nodePackages.js-beautify
     nodePackages.purescript-language-server
+    nodePackages.purty
     purescript
+    python3
+    python38Packages.autopep8
     ripgrep
     rnix-lsp
+    rustfmt
+    shfmt
+    stylish-haskell
   ];
 
   programs.neovim.plugins = with pkgs.vimPlugins; [
@@ -47,6 +60,7 @@
     indentLine
     purescript-vim
     vim-airline
+    vim-autoformat
     vim-nix
   ];
 }
