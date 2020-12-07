@@ -15,9 +15,10 @@ filetype plugin indent on
 let g:gruvbox_contrast_dark="hard"
 let g:gruvbox_italic=1
 let g:mapleader=" "
-let g:timeoutlen=1500
+let g:purescript_disable_indent=1
+let g:timeoutlen=1000
 
-set   autoindent 
+set   autoindent
 set   background=dark
 set nobackup
 set   backupcopy=yes
@@ -31,11 +32,11 @@ set   notermguicolors
 set   hidden
 set   ignorecase
 set   number
-set   relativenumber 
+set   relativenumber
 set   rulerformat=%l,%v
 set   shiftwidth=2
 set   shortmess+=c
-set   showtabline=1 
+set   showtabline=1
 set   signcolumn=yes
 set   smartcase
 set   tabstop=2
@@ -57,14 +58,14 @@ inoremap <unique> <A-j> <C-\><C-N><C-w>j
 inoremap <unique> <A-k> <C-\><C-N><C-w>k
 inoremap <A-l> <C-\><C-N><C-w>l
 inoremap <expr><unique> <Tab> pumvisible()
-                               \ ? "\<C-n>" 
-                               \ : "\<Tab>"
-inoremap <expr><unique> <S-Tab> pumvisible() 
-                        \ ? "\<C-p>" 
-                        \ : "\<S-Tab>"
-inoremap <expr> <CR> pumvisible() 
-                              \ ? coc#_select_confirm() 
-                              \ : "\<C-g>u\<CR>\<C-r>=coc#on_enter()\<CR>"
+      \ ? "\<C-n>"
+      \ : "\<Tab>"
+inoremap <expr><unique> <S-Tab> pumvisible()
+      \ ? "\<C-p>"
+      \ : "\<S-Tab>"
+inoremap <expr> <CR> pumvisible()
+      \ ? coc#_select_confirm()
+      \ : "\<C-g>u\<CR>\<C-r>=coc#on_enter()\<CR>"
 
 nmap f <Plug>(coc-smartf-forward)
 nmap F <Plug>(coc-smartf-backward)
@@ -94,6 +95,7 @@ nnoremap <unique> <Leader>lf :CocList files<CR>
 nnoremap <unique> <Leader>lg :CocList grep<CR>
 nnoremap <unique> <Leader>ls :CocList snippets<CR>
 nnoremap <unique> <Leader>ly :CocList yank<CR>
+nnoremap <unique> <Leader>nh :nohlsearch<CR>
 nnoremap <unique> <Leader>sd :call <SID>show_documentation()<CR>
 
 tnoremap <Up> <NOP>
@@ -127,18 +129,18 @@ augroup END
 
 augroup smartf
   autocmd!
-  autocmd User SmartfEnter :highlight 
-                           \ Conceal ctermfg=220 guifg=#6638F0
-  autocmd User SmartfLeave :highlight 
-                           \ Conceal ctermfg=239 guifg=#504945
+  autocmd User SmartfEnter :highlight
+        \ Conceal ctermfg=220 guifg=#6638F0
+  autocmd User SmartfLeave :highlight
+        \ Conceal ctermfg=239 guifg=#504945
 augroup END
 
 augroup terminal
   autocmd!
-  autocmd TermOpen * :setlocal 
-                     \ nonumber 
-                     \ norelativenumber 
-                     \ signcolumn=no
+  autocmd TermOpen * :setlocal
+        \ nonumber
+        \ norelativenumber
+        \ signcolumn=no
   autocmd TermOpen * startinsert
   autocmd BufEnter term://* startinsert
 augroup END
