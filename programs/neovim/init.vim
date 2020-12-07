@@ -112,7 +112,17 @@ xnoremap <Down> <NOP>
 xnoremap <Right> <NOP>
 xnoremap <Left> <NOP>
 
-augroup autoindent
+augroup activewindow
+  autocmd!
+  autocmd WinEnter * setlocal
+        \ number
+        \ relativenumber
+  autocmd WinLeave * setlocal
+        \ nonumber
+        \ norelativenumber
+augroup END
+
+augroup autoformat
   autocmd!
   autocmd BufWrite * :Autoformat
 augroup END
@@ -135,9 +145,9 @@ augroup smartf
         \ Conceal ctermfg=239 guifg=#504945
 augroup END
 
-augroup terminal
+augroup terminalwindow
   autocmd!
-  autocmd TermOpen * :setlocal
+  autocmd TermOpen * setlocal
         \ nonumber
         \ norelativenumber
         \ signcolumn=no
