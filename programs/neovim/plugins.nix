@@ -62,6 +62,7 @@
     vim-airline
     vim-autoformat
     vim-nix
+    vim-snippets
     vim-startify
   ];
 }

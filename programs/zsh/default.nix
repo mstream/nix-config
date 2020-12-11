@@ -4,8 +4,6 @@
   programs.zsh = {
     enable = true;
     initExtra = ". /Users/mstream/.nix-profile/etc/profile.d/nix.sh";
-    prezto = {
-      enable = true;
-    };
+    prezto = { enable = true; };
   };
 }

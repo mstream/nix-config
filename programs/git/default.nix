@@ -3,11 +3,7 @@
 {
   programs.git = {
     enable = true;
-    extraConfig = {
-      core = {
-        autocrlf = "input";
-      };
-    };
+    extraConfig = { core = { autocrlf = "input"; }; };
     userName = "mstream";
     userEmail = "maciej.laciak@gmail.com";
   };

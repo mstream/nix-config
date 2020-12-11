@@ -1,6 +1,6 @@
 function! s:show_documentation()
-  if (index(['vim','help'], &filetype) >= 0)
-    execute 'h '.expand('<cword>')
+  if (index(["vim","help"], &filetype) >= 0)
+    execute "h ".expand('<cword>')
   elseif (coc#rpc#ready())
     call CocActionAsync('doHover')
   else
@@ -8,22 +8,29 @@ function! s:show_documentation()
   endif
 endfunction
 
+let s:document_width = 72
+
+let g:formatdef_dhall_format = "\"dhall format\""
+let g:formatters_dhall = ["dhall_format"]
+let g:formatdef_nix_format =
+      \ "\"nixfmt --width=" . s:document_width . "\""
+let g:formatters_nix = [ "nix_format" ]
+let g:gruvbox_contrast_dark = "hard"
+let g:gruvbox_italic = 1
+let g:mapleader = " "
+let g:purescript_disable_indent = 1
+let g:timeoutlen = 1000
+
 syntax on
 filetype on
 filetype plugin indent on
-
-let g:gruvbox_contrast_dark="hard"
-let g:gruvbox_italic=1
-let g:mapleader=" "
-let g:purescript_disable_indent=1
-let g:timeoutlen=1000
 
 set   autoindent
 set   background=dark
 set nobackup
 set   backupcopy=yes
 set   cmdheight=2
-set   colorcolumn=72
+let  &colorcolumn = s:document_width + 1
 set   expandtab
 set   fileencoding=utf-8
 set   fileformat=unix
@@ -90,6 +97,7 @@ nnoremap <unique> <A-l> <C-w>l
 nnoremap <unique> <Leader>a :CocAction<CR>
 nnoremap <unique> <Leader>c :CocCommand<CR>
 nnoremap <unique> <Leader>lb :CocList buffers<CR>
+nnoremap <unique> <Leader>lc :CocList vimcommands<CR>
 nnoremap <unique> <Leader>ld :CocList diagnostics<CR>
 nnoremap <unique> <Leader>lf :CocList files<CR>
 nnoremap <unique> <Leader>lg :CocList grep<CR>
@@ -129,7 +137,7 @@ augroup END
 
 augroup coc
   autocmd!
-  autocmd CursorHold * call CocActionAsync('highlight')
+  autocmd CursorHold * call CocActionAsync("highlight")
 augroup END
 
 augroup gruvbox
