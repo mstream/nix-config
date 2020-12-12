@@ -5,6 +5,10 @@
     astyle
     dhall
     dhall-lsp-server
+    elmPackages.elm
+    elmPackages.elm-format
+    elmPackages.elm-language-server
+    elmPackages.elm-test
     go
     html-tidy
     llvm

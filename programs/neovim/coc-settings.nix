@@ -18,6 +18,12 @@
       args = [ "start" ];
       filetypes = [ "dockerfile" ];
     };
+    elm = {
+      command = "elm-language-server";
+      filetypes = [ "elm" ];
+      rootPatterns = [ "elm.json" ];
+      codeLens = { enable = true; };
+    };
     nix = {
       command = "rnix-lsp";
       filetypes = [ "nix" ];

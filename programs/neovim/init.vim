@@ -12,6 +12,9 @@ let s:document_width = 72
 
 let g:formatdef_dhall_format = "\"dhall format\""
 let g:formatters_dhall = ["dhall_format"]
+let g:formatdef_elm_format =
+      \ "\"elm-format --yes --elm-version 0.19 --upgrade\""
+let g:formatters_elm = ["elm_format"]
 let g:formatdef_nix_format =
       \ "\"nixfmt --width=" . s:document_width . "\""
 let g:formatters_nix = [ "nix_format" ]
