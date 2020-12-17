@@ -16,7 +16,9 @@
     nodejs-12_x
     nodePackages.bash-language-server
     nodePackages.dockerfile-language-server-nodejs
+    nodePackages.eslint
     nodePackages.js-beautify
+    nodePackages.prettier
     nodePackages.purescript-language-server
     nodePackages.purty
     purescript
@@ -59,6 +61,7 @@
     coc-yank
     coc-yaml
     dhall-vim
+    elm-vim
     emmet-vim
     gruvbox
     indentLine

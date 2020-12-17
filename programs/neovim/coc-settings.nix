@@ -37,7 +37,6 @@
     };
   };
   smartf = {
-    timeout = 1000;
     charactersIgnoreByNavigator = [
       "0"
       "a"
@@ -67,5 +66,7 @@
       "y"
       "z"
     ];
+    wordJump = false;
+    timeout = 1000;
   };
 }
