@@ -10,24 +10,39 @@ endfunction
 
 
 let s:document_width = 72
+let s:indentation_width = 2
+let s:prettier_options =
+      \ " --print-width=" . s:document_width
+      \ . " --tab-width=" . s:indentation_width
+      \ . " --write"
 
 " let g:autoformat_verbosemode=1
+let g:elm_syntastic_show_warnings = 1
 let g:elm_format_autosave = 1
+let g:elm_format_fail_silently = 0
+let g:elm_make_output_file = "dist/elm.js"
+let g:elm_make_show_warnings = 1
+let g:elm_setup_keybindings = 0
 let g:formatdef_dhall_format = "\"dhall format\""
 let g:formatdef_nixfmt =
       \ "\"nixfmt"
       \ . " --width=" . s:document_width
       \ . "\""
+let g:formatdef_prettier_json =
+      \ "\"prettier"
+      \ . " --parser=json"
+      \ . s:prettier_options
+      \ . "\""
 let g:formatdef_prettier_yaml =
       \ "\"prettier"
       \ . " --parser=yaml"
-      \ . " --print-width=" . s:document_width
       \ . " --single-quote=true"
-      \ . " --write"
+      \ . s:prettier_options
       \ . "\""
 let g:formatters_dhall = ["dhall_format"]
-let g:formatters_nix = [ "nixfmt" ]
-let g:formatters_yaml = [ "prettier_yamk" ]
+let g:formatters_json = ["prettier_json"]
+let g:formatters_nix = ["nixfmt"]
+let g:formatters_yaml = ["prettier_yaml"]
 let g:gruvbox_contrast_dark = "hard"
 let g:gruvbox_italic = 1
 let g:mapleader = " "
@@ -54,12 +69,12 @@ set   ignorecase
 set   number
 set   relativenumber
 set   rulerformat=%l,%v
-set   shiftwidth=2
+let  &shiftwidth = s:indentation_width
 set   shortmess+=c
 set   showtabline=1
 set   signcolumn=yes
 set   smartcase
-set   tabstop=2
+let  &tabstop = s:indentation_width
 set   updatetime=300
 set nowrap
 set nowritebackup
@@ -103,6 +118,8 @@ nnoremap <Up> <NOP>
 nnoremap <Down> <NOP>
 nnoremap <Right> <NOP>
 nnoremap <Left> <NOP>
+nnoremap <expr> <C-f> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-f>"
+nnoremap <expr> <C-b> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-b>"
 nnoremap <unique> <A-h> <C-w>h
 nnoremap <unique> <A-j> <C-w>j
 nnoremap <unique> <A-k> <C-w>k

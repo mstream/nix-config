@@ -1,7 +1,17 @@
 { config, ... }:
 
 {
-  diagnostic = { checkCurrentLine = true; };
+  codeLens = { enable = true; };
+  diagnostic = {
+    checkCurrentLine = true;
+    maxWindowHeight = 12;
+    maxWindowWidth = 80;
+  };
+  dialog = {
+    maxHeight = 30;
+    maxWidth = 80;
+  };
+  eslint = { autoFixOnSave = true; };
   languageserver = {
     bash = {
       command = "bash-language-server";
@@ -35,6 +45,10 @@
       rootPatterns = [ "spago.dhall" ];
       settings = { purescript = { addSpagoSources = true; }; };
     };
+  };
+  signature = {
+    maxWindowHeight = 12;
+    maxWindowWidth = 80;
   };
   smartf = {
     charactersIgnoreByNavigator = [

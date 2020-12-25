@@ -16,6 +16,7 @@
     nodejs-12_x
     nodePackages.bash-language-server
     nodePackages.dockerfile-language-server-nodejs
+    nodePackages.elm-oracle
     nodePackages.eslint
     nodePackages.js-beautify
     nodePackages.prettier
