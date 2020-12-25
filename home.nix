@@ -19,6 +19,7 @@
     dhall-nix
     gimp
     idris2
+    inkscape
     niv
     spago
   ];
