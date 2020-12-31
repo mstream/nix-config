@@ -18,12 +18,18 @@ let s:prettier_options =
 
 " let g:autoformat_verbosemode=1
 let g:elm_syntastic_show_warnings = 1
-let g:elm_format_autosave = 1
+let g:elm_format_autosave = 0
 let g:elm_format_fail_silently = 0
 let g:elm_make_output_file = "dist/elm.js"
 let g:elm_make_show_warnings = 1
 let g:elm_setup_keybindings = 0
 let g:formatdef_dhall_format = "\"dhall format\""
+let g:formatdef_elm_format =
+      \ "\"elm-format"
+      \ . " --stdin"
+      \ . " --upgrade"
+      \ . " --yes"
+      \ . "\""
 let g:formatdef_nixfmt =
       \ "\"nixfmt"
       \ . " --width=" . s:document_width
@@ -40,6 +46,7 @@ let g:formatdef_prettier_yaml =
       \ . s:prettier_options
       \ . "\""
 let g:formatters_dhall = ["dhall_format"]
+let g:formatters_elm = ["elm_format"]
 let g:formatters_json = ["prettier_json"]
 let g:formatters_nix = ["nixfmt"]
 let g:formatters_yaml = ["prettier_yaml"]
