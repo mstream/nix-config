@@ -14,6 +14,7 @@
   };
 
   home.packages = with pkgs; [
+    awscli2
     dhall-bash
     dhall-json
     dhall-nix
