@@ -72,5 +72,6 @@
     vim-nix
     vim-snippets
     vim-startify
+    vim-toml
   ];
 }
