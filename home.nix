@@ -21,6 +21,7 @@
     gimp
     idris2
     inkscape
+    netlify-cli
     niv
     spago
   ];
