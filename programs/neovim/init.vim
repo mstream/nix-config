@@ -62,8 +62,9 @@ filetype plugin indent on
 
 set   autoindent
 set   background=dark
-set nobackup
+set   backup
 set   backupcopy=yes
+set   backupdir=~/.local/share/nvim/backup
 set   cmdheight=2
 let  &colorcolumn = s:document_width + 1
 set   expandtab

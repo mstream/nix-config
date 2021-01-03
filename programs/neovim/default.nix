@@ -15,6 +15,8 @@ in {
     withNodeJs = true;
   };
 
+  xdg.dataFile."nvim/backup/.keep".text = "";
+
   xdg.configFile."nvim/coc-settings.json".source =
     builtins.toFile "coc-settings.json"
     (builtins.toJSON (cocSettings { inherit config; }));

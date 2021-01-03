@@ -13,18 +13,7 @@
     VISUAL = "nvim";
   };
 
-  home.packages = with pkgs; [
-    awscli2
-    dhall-bash
-    dhall-json
-    dhall-nix
-    gimp
-    idris2
-    inkscape
-    netlify-cli
-    niv
-    spago
-  ];
+  home.packages = with pkgs; [ awscli2 gimp inkscape netlify-cli niv ];
 
   imports = [ ./programs ];
 }
