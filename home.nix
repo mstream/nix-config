@@ -13,7 +13,20 @@
     VISUAL = "nvim";
   };
 
-  home.packages = with pkgs; [ awscli2 gimp inkscape netlify-cli niv ];
+  home.packages = with pkgs; [
+    awscli2
+    browsh
+    cargo
+    docker
+    kind
+    gimp
+    gradle
+    graphviz
+    inkscape
+    jdk
+    niv
+    unixtools.watch
+  ];
 
   imports = [ ./programs ];
 }
