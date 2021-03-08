@@ -23,7 +23,9 @@ let g:elm_format_fail_silently = 0
 let g:elm_make_output_file = "dist/elm.js"
 let g:elm_make_show_warnings = 1
 let g:elm_setup_keybindings = 0
-let g:formatdef_dhall_format = "\"dhall format\""
+let g:formatdef_dhall_format =
+      \ "\"dhall format"
+      \ . "\""
 let g:formatdef_elm_format =
       \ "\"elm-format"
       \ . " --stdin"
@@ -39,19 +41,32 @@ let g:formatdef_prettier_json =
       \ . " --parser=json"
       \ . s:prettier_options
       \ . "\""
+let g:formatdef_prettier_markdown =
+      \ "\"prettier"
+      \ . " --parser=markdown"
+      \ . s:prettier_options
+      \ . "\""
 let g:formatdef_prettier_yaml =
       \ "\"prettier"
       \ . " --parser=yaml"
       \ . " --single-quote=true"
       \ . s:prettier_options
       \ . "\""
+let g:formatdef_purty =
+      \ "\"purty format"
+      \ . " --write"
+      \ . " -"
+      \ . "\""
 let g:formatters_dhall = ["dhall_format"]
 let g:formatters_elm = ["elm_format"]
 let g:formatters_json = ["prettier_json"]
+let g:formatters_markdown = ["prettier_markdown"]
 let g:formatters_nix = ["nixfmt"]
+let g:formatters_purescript = ["purty"]
 let g:formatters_yaml = ["prettier_yaml"]
 let g:gruvbox_contrast_dark = "hard"
 let g:gruvbox_italic = 1
+let g:gruvbox_transparent_bg = 1
 let g:mapleader = " "
 let g:purescript_disable_indent = 1
 let g:timeoutlen = 1000
@@ -71,7 +86,7 @@ set   expandtab
 set   fileencoding=utf-8
 set   fileformat=unix
 set   fixendofline
-set   notermguicolors
+set   termguicolors
 set   hidden
 set   ignorecase
 set   number
@@ -173,6 +188,11 @@ augroup autoformat
   autocmd BufWrite * :Autoformat
 augroup END
 
+augroup gitcommit
+  autocmd!
+  autocmd FileType gitcommit let b:autoformat_autoindent=0
+augroup END
+
 augroup coc
   autocmd!
   autocmd CursorHold * call CocActionAsync("highlight")
@@ -200,4 +220,3 @@ augroup terminalwindow
   autocmd TermOpen * startinsert
   autocmd BufEnter term://* startinsert
 augroup END
-
