@@ -3,8 +3,16 @@
 {
   programs.git = {
     enable = true;
-    extraConfig = { core = { autocrlf = "input"; }; };
-    userName = "mstream";
-    userEmail = "maciej.laciak@gmail.com";
+    extraConfig = {
+      commit = { template = ".commit-msg-template"; };
+      core = {
+        autocrlf = "input";
+        editor = "vim";
+      };
+      user = {
+        email = "maciej.laciak@gmail.com";
+        name = "mstream";
+      };
+    };
   };
 }
