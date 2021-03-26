@@ -1,3 +1,22 @@
-export NVM_DIR="$HOME/.nvm"
-[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"
+setopt NO_EXTENDED_GLOB
+
+alias j11="export JAVA_HOME=${HOME}/Development/jdk/11"
+alias j14="export JAVA_HOME=${HOME}/Development/jdk/14"
+
+alias n12="export NODE_HOME=${HOME}/Development/node/12"
+alias n14="export NODE_HOME=${HOME}/Development/node/14"
+
+j14
+n14
+
+bin_dirs=(\
+  "${HOME}/.cargo/bin" \
+  "${JAVA_HOME}/bin" \
+  "${NODE_HOME}/bin" \
+  "${PWD}/node_modules/.bin"\
+)
+
+path_prefix=$(printf '%s:' "${bin_dirs[@]}")
+
+export PATH="${path_prefix}:${PATH}"
 

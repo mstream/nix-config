@@ -23,10 +23,16 @@
     gradle
     graphviz
     inkscape
-    jdk
     niv
     unixtools.watch
   ];
 
   imports = [ ./programs ];
+
+  home.file = with pkgs; {
+    "Development/jdk/11".source = jdk11;
+    "Development/jdk/14".source = jdk14;
+    "Development/node/12".source = nodejs-12_x;
+    "Development/node/14".source = nodejs-14_x;
+  };
 }
