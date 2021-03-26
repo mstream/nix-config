@@ -32,6 +32,7 @@
     keybindings = {
       "alt+left" = "send_text all \\x1b\\x62";
       "alt+right" = "send_text all \\x1b\\x66";
+      "kitty_mod+enter" = "new_window_with_cwd";
     };
   };
 }
