@@ -125,10 +125,6 @@ inoremap <expr> <CR> pumvisible()
       \ ? coc#_select_confirm()
       \ : "\<C-g>u\<CR>\<C-r>=coc#on_enter()\<CR>"
 
-nmap f <Plug>(coc-smartf-forward)
-nmap F <Plug>(coc-smartf-backward)
-nmap ; <Plug>(coc-smartf-repeat)
-nmap , <Plug>(coc-smartf-repeat-opposite)
 nmap <unique> <Leader>cs <Plug>(coc-rename)
 nmap <unique> <Leader>g[ <Plug>(coc-diagnostic-prev)
 nmap <unique> <Leader>g] <Plug>(coc-diagnostic-next)
@@ -188,14 +184,19 @@ augroup autoformat
   autocmd BufWrite * :Autoformat
 augroup END
 
+augroup coc
+  autocmd!
+  autocmd CursorHold * call CocActionAsync("highlight")
+augroup END
+
 augroup gitcommit
   autocmd!
   autocmd FileType gitcommit let b:autoformat_autoindent=0
 augroup END
 
-augroup coc
+augroup groovy
   autocmd!
-  autocmd CursorHold * call CocActionAsync("highlight")
+  autocmd FileType groovy let b:autoformat_autoindent=0
 augroup END
 
 augroup gruvbox

@@ -12,6 +12,26 @@
     maxWidth = 80;
   };
   eslint = { autoFixOnSave = true; };
+  java = {
+    codeGeneration = { useBlocks = true; };
+    completion = {
+      enabled = true;
+      guessMethodArguments = true;
+    };
+    configuration = { updateBuildConfiguration = "automatic"; };
+    enabled = true;
+    format = { enabled = true; };
+    implementationsCodeLens = { enabled = true; };
+    import = {
+      gradle = {
+        enabled = true;
+        wrapper = { enabled = true; };
+      };
+    };
+    referencesCodeLens = { enabled = true; };
+    saveActions = { organizeImports = true; };
+    signatureHelp = { enabled = true; };
+  };
   languageserver = {
     bash = {
       command = "bash-language-server";
