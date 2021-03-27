@@ -14,6 +14,7 @@
   };
 
   home.packages = with pkgs; [
+    act
     awscli2
     browsh
     cargo
