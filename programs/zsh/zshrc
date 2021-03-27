@@ -14,11 +14,22 @@ n14
 bin_dirs=(\
   "${HOME}/.cargo/bin" \
   "${JAVA_HOME}/bin" \
-  "${NODE_HOME}/bin" \
-  "${PWD}/node_modules/.bin"\
+  "${NODE_HOME}/bin"\
 )
 
 path_prefix=$(printf '%s:' "${bin_dirs[@]}")
 
-export PATH="${path_prefix}:${PATH}"
+export PATH="${path_prefix}${PATH}"
 
+npm_chpwd_hook() {
+  if [ -n "${PRENPMPATH+x}" ]; then
+    PATH=$PRENPMPATH
+    unset PRENPMPATH
+  fi
+  if [ -f package.json ]; then
+    PRENPMPATH=$PATH
+    PATH=$(npm bin):$PATH
+  fi
+}
+
+add-zsh-hook preexec npm_chpwd_hook
