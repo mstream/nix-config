@@ -17,6 +17,7 @@
     awscli2
     browsh
     cargo
+    coreutils
     docker
     kind
     gimp
