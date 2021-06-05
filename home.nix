@@ -20,13 +20,21 @@
     cargo
     coreutils
     docker
+    emacs
     kind
     gimp
     gradle
     graphviz
     inkscape
+    maven
+    nerdfonts
     niv
+    nodePackages.lerna
+    stack
     unixtools.watch
+    vault
+    yarn
+    yq
   ];
 
   imports = [ ./programs ];

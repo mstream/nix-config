@@ -7,6 +7,7 @@
     ./gpg
     ./home-manager
     ./htop
+    ./kakoune
     ./kitty
     ./neovim
     ./password-store
