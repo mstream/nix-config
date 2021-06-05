@@ -67,6 +67,8 @@ let g:formatters_yaml = ["prettier_yaml"]
 let g:gruvbox_contrast_dark = "hard"
 let g:gruvbox_italic = 1
 let g:gruvbox_transparent_bg = 1
+let g:indentLine_concealcursor = 'inc'
+let g:indentLine_conceallevel = 1
 let g:mapleader = " "
 let g:purescript_disable_indent = 1
 let g:timeoutlen = 1000
@@ -80,8 +82,10 @@ set   background=dark
 set   backup
 set   backupcopy=yes
 set   backupdir=~/.local/share/nvim/backup
+set   clipboard=unnamed
 set   cmdheight=2
 let  &colorcolumn = s:document_width + 1
+set   conceallevel=0
 set   expandtab
 set   fileencoding=utf-8
 set   fileformat=unix
@@ -179,37 +183,14 @@ augroup activewindow
         \ norelativenumber
 augroup END
 
-augroup autoformat
-  autocmd!
-  autocmd BufWrite * :Autoformat
-augroup END
-
 augroup coc
   autocmd!
   autocmd CursorHold * call CocActionAsync("highlight")
 augroup END
 
-augroup gitcommit
-  autocmd!
-  autocmd FileType gitcommit let b:autoformat_autoindent=0
-augroup END
-
-augroup groovy
-  autocmd!
-  autocmd FileType groovy let b:autoformat_autoindent=0
-augroup END
-
 augroup gruvbox
   autocmd!
   autocmd VimEnter * ++nested colorscheme gruvbox
-augroup END
-
-augroup smartf
-  autocmd!
-  autocmd User SmartfEnter :highlight
-        \ Conceal ctermfg=220 guifg=#6638F0
-  autocmd User SmartfLeave :highlight
-        \ Conceal ctermfg=239 guifg=#504945
 augroup END
 
 augroup terminalwindow

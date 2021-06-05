@@ -1,6 +1,12 @@
 { config, ... }:
 
 {
+  coc = {
+    preferences = {
+      colorSupport = true;
+      formatOnType = false;
+    };
+  };
   codeLens = { enable = true; };
   diagnostic = {
     checkCurrentLine = true;
@@ -8,7 +14,7 @@
     maxWindowWidth = 80;
   };
   dialog = {
-    maxHeight = 30;
+    maxHeight = 36;
     maxWidth = 80;
   };
   eslint = { autoFixOnSave = true; };
@@ -66,41 +72,18 @@
       settings = { purescript = { addSpagoSources = true; }; };
     };
   };
+  prettier = {
+    bracketSpacing = true;
+    eslintIntegration = true;
+    printWidth = 72;
+    tabWidth = 2;
+    semi = true;
+    singleQuote = false;
+    trailingComma = "all";
+    useTabs = false;
+  };
   signature = {
     maxWindowHeight = 12;
     maxWindowWidth = 80;
-  };
-  smartf = {
-    charactersIgnoreByNavigator = [
-      "0"
-      "a"
-      "b"
-      "c"
-      "d"
-      "e"
-      "f"
-      "g"
-      "h"
-      "i"
-      "j"
-      "k"
-      "l"
-      "m"
-      "n"
-      "o"
-      "p"
-      "q"
-      "r"
-      "s"
-      "t"
-      "u"
-      "v"
-      "w"
-      "x"
-      "y"
-      "z"
-    ];
-    wordJump = false;
-    timeout = 1000;
   };
 }

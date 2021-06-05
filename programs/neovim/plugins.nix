@@ -64,13 +64,15 @@
     elm-vim
     emmet-vim
     gruvbox
-    indentLine
+    polyglot
     purescript-vim
     vim-airline
     vim-autoformat
+    vim-jinja
     vim-nix
     vim-snippets
     vim-startify
     vim-toml
+    vim-twig
   ];
 }
