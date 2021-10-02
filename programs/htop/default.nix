@@ -2,9 +2,11 @@
 
 {
   programs.htop = {
-    delay = 5;
     enable = true;
-    enableMouse = false;
-    vimMode = true;
+    settings = {
+      delay = 5;
+      enableMouse = false;
+      vimMode = true;
+    };
   };
 }

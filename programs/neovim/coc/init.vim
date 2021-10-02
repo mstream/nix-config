@@ -8,7 +8,6 @@ function! s:show_documentation()
   endif
 endfunction
 
-
 let s:document_width = 72
 let s:indentation_width = 2
 let s:prettier_options =

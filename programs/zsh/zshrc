@@ -2,13 +2,15 @@ setopt NO_EXTENDED_GLOB
 
 alias readling=greadling
 
+alias j8="export JAVA_HOME=${HOME}/Development/jdk/8"
 alias j11="export JAVA_HOME=${HOME}/Development/jdk/11"
-alias j14="export JAVA_HOME=${HOME}/Development/jdk/14"
+alias j14="export JAVA_HOME=${HOME}/Development/jdk/16"
 
 alias n12="export NODE_HOME=${HOME}/Development/node/12"
 alias n14="export NODE_HOME=${HOME}/Development/node/14"
+alias n16="export NODE_HOME=${HOME}/Development/node/16"
 
-j14
+j11
 n14
 
 bin_dirs=(\
@@ -33,3 +35,4 @@ npm_chpwd_hook() {
 }
 
 add-zsh-hook preexec npm_chpwd_hook
+
