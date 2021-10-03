@@ -2,7 +2,7 @@
 
 {
   programs.kitty = {
-    enable = true;
+    enable = false;
     settings = {
       adjust_line_height = "100%";
       adjust_column_width = "95%";

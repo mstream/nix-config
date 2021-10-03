@@ -2,10 +2,6 @@ let s:document_width = 72
 let s:indentation_width = 2
 let s:common_ale_fixers = ['remove_trailing_lines', 'trim_whitespace']
 
-let g:ale_sign_column_always = 1
-let g:deoplete#enable_at_startup = 1
-let g:mapleader = " "
-
 let g:ale_completion_enabled = 0
 let g:ale_fix_on_save = 1
 let g:ale_fixers = 
@@ -39,7 +35,7 @@ let g:ale_linters =
 \     ]
 \ }
 
-g:ale_purescript_ls_config =
+let g:ale_purescript_ls_config =
 \ {
 \   'purescript': {
 \     'addSpagoSources': v:true,
@@ -48,20 +44,18 @@ g:ale_purescript_ls_config =
 \   }
 \ }
 
+let g:ale_purescript_tidy_options = '--import-wrap-auto --unicode-always --width ' . s:document_width
+
+let g:ale_sign_column_always = 1
+
+let g:deoplete#enable_at_startup = 1
+let g:mapleader = " "
+
 function! s:set_completion_sources()
   call deoplete#custom#option("sources", {
   \ "_": ["ale"],
   \})
 endfunction
-
-function! FormatPurescript(buffer) abort
-    return {
-    \   'command': 'purs-tidy format --import-wrap-auto --unicode-always --width ' 
-    \              . s:document_width
-    \}
-endfunction
-
-
 
 syntax on
 filetype on
@@ -145,16 +139,6 @@ xnoremap <Up> <NOP>
 xnoremap <Down> <NOP>
 xnoremap <Right> <NOP>
 xnoremap <Left> <NOP>
-
-augroup ale
-  autocmd!
-  autocmd VimEnter * execute ale#fix#registry#Add(
-\   'purs-tidy', 
-\   'FormatPurescript', 
-\   ['purescript'], 
-\   'Format using purs-tidy'
-\ )
-augroup END
 
 augroup deoplete
   autocmd!

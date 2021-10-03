@@ -22,7 +22,6 @@ let
 in {
   home.username = "mstream";
   home.homeDirectory = "/Users/mstream";
-  home.stateVersion = "21.05";
 
   home.sessionVariables = {
     BROWSER = "firefox";

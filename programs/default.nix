@@ -2,6 +2,7 @@
 
 {
   imports = [
+    ./alacritty
     ./direnv
     ./git
     ./gpg
@@ -11,6 +12,7 @@
     ./kitty
     ./neovim
     ./password-store
+    ./tmux
     ./zsh
   ];
 }
