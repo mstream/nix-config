@@ -13,6 +13,7 @@ let
 
   ps-packages = with easy-ps; [
     psa
+    pscid
     purescript-language-server 
     purs
     purs-tidy

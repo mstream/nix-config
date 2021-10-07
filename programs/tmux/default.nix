@@ -13,6 +13,6 @@
       set -s escape-time 0
     '';
     keyMode = "vi";
-    prefix = "'C-\\'";
+    prefix = "'C-Space'";
   };
 }
