@@ -13,13 +13,18 @@ let g:ale_fixers =
 \       'dhall-freeze',
 \     ] + s:common_ale_fixers
 \   ,
+\   'html': 
+\     [
+\       'prettier', 
+\     ] + s:common_ale_fixers
+\   ,
 \   'javascript': 
 \     [
 \       'eslint', 
 \       'importjs', 
 \       'prettier', 
 \     ] + s:common_ale_fixers
-\     ,
+\   ,
 \   'purescript': 
 \     [
 \       'purs-tidy', 
@@ -28,6 +33,11 @@ let g:ale_fixers =
 
 let g:ale_linters = 
 \ {
+\   'html': 
+\     [
+\       'htmlhint', 
+\     ]
+\   ,
 \   'javascript': 
 \     [
 \       'eslint', 
@@ -44,12 +54,13 @@ let g:ale_purescript_ls_config =
 \   }
 \ }
 
-let g:ale_purescript_tidy_options = '--import-wrap-auto --unicode-always --width ' . s:document_width
+let g:ale_purescript_tidy_options = '--import-sort-ide --import-wrap-auto --unicode-always --width ' . s:document_width
 
 let g:ale_sign_column_always = 1
 
 let g:deoplete#enable_at_startup = 1
 let g:mapleader = " "
+let g:maplocalleader = ","
 
 function! s:set_completion_sources()
   call deoplete#custom#option("sources", {
