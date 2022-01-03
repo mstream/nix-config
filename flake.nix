@@ -1,20 +1,15 @@
 {
-  description = "A Home Manager flake";
+  description = "Mstream's darwin system";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
-    home-manager.url = "github:nix-community/home-manager";
-    home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    darwin.url = "github:lnl7/nix-darwin/master";
+    nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-21.11-darwin";
   };
 
-  outputs = inputs: {
-    homeConfigurations = {
-      jdoe = inputs.home-manager.lib.homeManagerConfiguration {
-        system = "x86_64-darwin";
-        homeDirectory = "/home/mstream";
-        username = "mstream";
-        configuration.imports = [ ./home.nix ];
-      };
+  outputs = { self, darwin, nixpkgs }: {
+    darwinConfigurations."Mstreams-MacBook" = darwin.lib.darwinSystem {
+      system = "x86_64-darwin";
+      modules = [ ./configuration.nix ];
     };
   };
 }
