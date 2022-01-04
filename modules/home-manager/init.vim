@@ -25,6 +25,12 @@ let g:ale_fixers =
 \       'prettier', 
 \     ] + s:common_ale_fixers
 \   ,
+\   'nix': 
+\     [
+\       'nixfmt', 
+\       'statix', 
+\     ] + s:common_ale_fixers
+\   ,
 \   'purescript': 
 \     [
 \       'purs-tidy', 
@@ -44,6 +50,8 @@ let g:ale_linters =
 \       'tsserver', 
 \     ]
 \ }
+
+let g:ale_nix_nixfmt_options = '--width' . s:document_width
 
 let g:ale_purescript_ls_config =
 \ {
