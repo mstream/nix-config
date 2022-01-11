@@ -1,7 +1,7 @@
 { pkgs, ... }: {
 
   users = {
-    nix.configureBuildUsers = true;   
+    nix.configureBuildUsers = true;
     users.mstream = {
       home = "/Users/mstream";
       name = "mstream";
@@ -10,8 +10,10 @@
         dhall
         fzf
         nixfmt
+        nodejs
         nodePackages.htmlhint
         nodePackages.prettier
+        nodePackages.purty
         perl
         ripgrep
         statix

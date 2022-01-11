@@ -33,7 +33,6 @@ let g:ale_fixers =
 \   ,
 \   'purescript': 
 \     [
-\       'purs-tidy', 
 \     ] + s:common_ale_fixers
 \ }
 
@@ -49,9 +48,15 @@ let g:ale_linters =
 \       'eslint', 
 \       'tsserver', 
 \     ]
+\   ,
+\   'purescript':
+\     [
+\       'purescript-language-server' 
+\     ]
+\   ,
 \ }
 
-let g:ale_nix_nixfmt_options = '--width' . s:document_width
+let g:ale_nix_nixfmt_options = '--width ' . s:document_width
 
 let g:ale_purescript_ls_config =
 \ {

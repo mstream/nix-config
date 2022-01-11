@@ -10,14 +10,12 @@
       enable = true;
       settings = {
         background_opacity = 0.95;
-        font = {
-          size = 18;
-        };
+        font = { size = 18; };
         key_bindings = [
           {
             key = "H";
             mods = "ALT";
-            chars="\\x1bh";
+            chars = "\\x1bh";
           }
           {
             key = "J";
@@ -47,11 +45,7 @@
         ];
         shell = {
           program = "/bin/zsh";
-          args = [
-            "-l"
-            "-c"
-            "tmux attach || tmux"
-          ];
+          args = [ "-l" "-c" "tmux attach || tmux" ];
         };
         window = {
           decorations = "full";
@@ -65,9 +59,8 @@
     };
     firefox = {
       enable = true;
-      extensions = with pkgs.nur.repos.rycee.firefox-addons; [
-        ublock-origin
-      ];
+      extensions = with pkgs.nur.repos.rycee.firefox-addons;
+        [ ublock-origin ];
       package = pkgs.runCommand "firefox-0.0.0" { } "mkdir $out";
     };
     git = {
@@ -103,8 +96,8 @@
       viAlias = true;
       vimAlias = true;
       vimdiffAlias = true;
-      extraConfig  = builtins.readFile ./init.vim;
-        plugins = with pkgs.vimPlugins; [
+      extraConfig = builtins.readFile ./init.vim;
+      plugins = with pkgs.vimPlugins; [
         ale
         deoplete-nvim
         fzf-vim
@@ -113,9 +106,7 @@
         vim-polyglot
       ];
     };
-    password-store = {
-      enable = true;
-    };
+    password-store = { enable = true; };
     tmux = {
       baseIndex = 1;
       clock24 = true;
@@ -133,29 +124,33 @@
     zsh = {
       enable = true;
       enableCompletion = true;
+      initExtra = builtins.readFile ./zshrc;
       prezto = {
         color = true;
         editor = {
-          keymap = "emacs";
+          keymap = "vi";
           promptContext = true;
         };
         enable = true;
         pmodules = [
-            "environment"
-            "terminal"
-            "editor"
-            "history"
-            "directory"
-            "spectrum"
-            "utility"
-            "completion"
-            "prompt"
-            "syntax-highlighting"
-            "ssh"
-            "command-not-found"
-            "git"
-            "node"
-            "docker"
+          "environment"
+          "terminal"
+          "editor"
+          "history"
+          "directory"
+          "spectrum"
+          "utility"
+          "osx"
+          "completion"
+          "prompt"
+          "syntax-highlighting"
+          "history-substring-search"
+          "autosuggestions"
+          "ssh"
+          "command-not-found"
+          "git"
+          "node"
+          "docker"
         ];
         prompt = {
           pwdLength = "short";
