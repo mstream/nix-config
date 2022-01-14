@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ easy-ps, pkgs, ... }: {
 
   users = {
     nix.configureBuildUsers = true;
@@ -7,15 +7,21 @@
       name = "mstream";
       packages = with pkgs; [
         bat
+        cachix
         dhall
-        fzf
+        dhall-lsp-server
+        easy-ps.purs-tidy
+        easy-ps.purescript-language-server
         nixfmt
         nodejs
         nodePackages.htmlhint
         nodePackages.prettier
         nodePackages.purty
         perl
+        purescript
         ripgrep
+        rnix-lsp
+        spago
         statix
         unixtools.watch
       ];

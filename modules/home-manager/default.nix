@@ -62,6 +62,29 @@
       extensions = with pkgs.nur.repos.rycee.firefox-addons;
         [ ublock-origin ];
       package = pkgs.runCommand "firefox-0.0.0" { } "mkdir $out";
+      profiles = {
+        mstream = {
+          bookmarks = {
+            comGithub = {
+              keyword = "github";
+              name = "GitHub";
+              url = "https://github.com";
+            };
+            orgNixosSearch = {
+              keyword = "nixos";
+              name = "NixOS Search";
+              url = "https://search.nixos.org";
+            };
+            orgPurescriptPursuit = {
+              keyword = "pursuit";
+              name = "Pursuit";
+              url = "https://pursuit.purescript.org/";
+            };
+          };
+          isDefault = true;
+          name = "MStream";
+        };
+      };
     };
     git = {
       enable = true;
@@ -98,12 +121,28 @@
       vimdiffAlias = true;
       extraConfig = builtins.readFile ./init.vim;
       plugins = with pkgs.vimPlugins; [
-        ale
-        deoplete-nvim
-        fzf-vim
+        cmp-buffer
+        cmp-calc
+        cmp-emoji
+        cmp-nvim-lsp
+        cmp-nvim-lsp-document-symbol
+        cmp-omni
+        cmp-path
+        cmp-spell
+        cmp-vsnip
+        dhall-vim
         gruvbox
-        idris2-vim
-        vim-polyglot
+        lsp_signature-nvim
+        nvim-cmp
+        nvim-lspconfig
+        nvim-treesitter
+        nvim-web-devicons
+        plenary-nvim
+        purescript-vim
+        telescope-nvim
+        vim-airline
+        vim-airline-themes
+        vim-vsnip
       ];
     };
     password-store = { enable = true; };

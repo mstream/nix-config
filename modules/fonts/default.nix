@@ -1,6 +1,6 @@
 {pkgs, ...}: {
   fonts = {
     enableFontDir = true;
-    fonts = with pkgs; [ overpass fira ];
+    fonts = with pkgs; [ fira nerdfonts overpass ];
   };
 }

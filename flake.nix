@@ -1,29 +1,26 @@
 {
   description = "Mstreams's Nix Environment";
 
-  nixConfig = {
-    extra-substituters = [ "https://nix-community.cachix.org" ];
-    extra-trusted-public-keys = [
-      "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
-    ];
-  };
-
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
-    nur.url = "github:nix-community/NUR";
     darwin = {
       url = "github:LnL7/nix-darwin/master";
       inputs.nixpkgs.follows = "nixpkgs";
+    };
+    easy-purescript-nix = {
+      url = "github:justinwoo/easy-purescript-nix";
+      flake = false;
     };
     home-manager = {
       url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
+    nur.url = "github:nix-community/NUR";
   };
 
-  outputs = { self, nixpkgs, darwin, home-manager, ... }@inputs:
-    let system = "x86_64-darwin";
-    in {
+  outputs = { self, nixpkgs, darwin, home-manager, easy-purescript-nix, ... }@inputs:
+  let system = "x86_64-darwin";
+  in {
       darwinConfigurations.macbook = darwin.lib.darwinSystem {
         inherit system;
         modules = [
@@ -36,7 +33,11 @@
           (import ./modules/nixpkgs/default.nix {inherit inputs;})
           ./modules/programs/default.nix
           ./modules/services/default.nix
-          ./modules/users/default.nix
+          ({pkgs, ...}: (import ./modules/users/default.nix {
+              inherit pkgs; 
+              easy-ps = import easy-purescript-nix {inherit pkgs; };
+            })
+          )
         ];
       };
       defaultPackage.x86_64-darwin = self.darwinConfigurations.macbook.system;

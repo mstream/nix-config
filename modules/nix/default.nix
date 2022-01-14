@@ -1,4 +1,4 @@
-{pkgs, system, ...}: {
+{ pkgs, system, ... }: {
   nix = {
     package = pkgs.nix;
     extraOptions = ''
