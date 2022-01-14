@@ -19,8 +19,9 @@
   };
 
   outputs = { self, nixpkgs, darwin, home-manager, easy-purescript-nix, ... }@inputs:
-  let system = "x86_64-darwin";
-  in {
+    let system = "x86_64-darwin";
+    in
+    {
       darwinConfigurations.macbook = darwin.lib.darwinSystem {
         inherit system;
         modules = [
@@ -29,14 +30,15 @@
           ./modules/environment/default.nix
           ./modules/fonts/default.nix
           ./modules/home-manager/default.nix
-          ({pkgs, ...}: (import ./modules/nix/default.nix {inherit pkgs; inherit system;}))
-          (import ./modules/nixpkgs/default.nix {inherit inputs;})
+          ({ pkgs, ... }: (import ./modules/nix/default.nix { inherit pkgs; inherit system; }))
+          (import ./modules/nixpkgs/default.nix { inherit inputs; })
           ./modules/programs/default.nix
           ./modules/services/default.nix
-          ({pkgs, ...}: (import ./modules/users/default.nix {
-              inherit pkgs; 
-              easy-ps = import easy-purescript-nix {inherit pkgs; };
-            })
+          ./modules/system/default.nix
+          ({ pkgs, ... }: (import ./modules/users/default.nix {
+            inherit pkgs;
+            easy-ps = import easy-purescript-nix { inherit pkgs; };
+          })
           )
         ];
       };
