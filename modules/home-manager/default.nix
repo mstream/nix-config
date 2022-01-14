@@ -11,6 +11,7 @@
     firefox = (import ./firefox/default.nix { inherit pkgs; });
     git = import ./git/default.nix;
     gpg = import ./gpg/default.nix;
+    jq = import ./jq/default.nix;
     neovim = (import ./neovim/default.nix { inherit pkgs; });
     password-store = import ./password-store/default.nix;
     tmux = import ./tmux/default.nix;
