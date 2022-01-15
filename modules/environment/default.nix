@@ -1,4 +1,6 @@
 { pkgs, ... }: {
-  environment.systemPackages = with pkgs; [
-  ];
+  environment.variables = {
+    EDITOR = "vim";
+    PAGER = "bat";
+  };
 }

@@ -81,7 +81,7 @@ autocmd BufNewFile,BufRead *.nix setf nix
 autocmd BufNewFile,BufRead *.purs setf purescript
 autocmd BufWritePre *.dhall lua vim.lsp.buf.formatting_sync(nil, 1000)
 autocmd BufWritePre *.nix lua vim.lsp.buf.formatting_sync(nil, 1000)
-autocmd BufWritePre *.purs lua vim.lsp.buf.formatting_sync(nil, 1000)
+autocmd BufWritePre *.purs lua vim.lsp.buf.code_action({ source = { organizeImports = true } })
 
 augroup gruvbox
   autocmd!
