@@ -17,6 +17,7 @@
     dhall-vim
     gruvbox
     lsp_signature-nvim
+    lsp-status-nvim
     nvim-cmp
     nvim-lspconfig
     nvim-treesitter

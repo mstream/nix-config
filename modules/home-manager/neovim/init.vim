@@ -81,7 +81,8 @@ autocmd BufNewFile,BufRead *.nix setf nix
 autocmd BufNewFile,BufRead *.purs setf purescript
 autocmd BufWritePre *.dhall lua vim.lsp.buf.formatting_sync(nil, 1000)
 autocmd BufWritePre *.nix lua vim.lsp.buf.formatting_sync(nil, 1000)
-autocmd BufWritePre *.purs lua vim.lsp.buf.code_action({ source = { organizeImports = true } })
+autocmd BufWritePre *.purs lua vim.lsp.buf.formatting_sync(nil, 1000)
+"autocmd BufWritePre *.purs lua vim.lsp.buf.code_action({ source = { organizeImports = true } })
 
 augroup gruvbox
   autocmd!
@@ -91,7 +92,8 @@ augroup END
 lua << EOF
 local cmp = require'cmp'
 local devicons = require"nvim-web-devicons"
-local nvim_lsp = require('lspconfig')
+local lsp_status = require('lsp-status')
+local lspconfig = require('lspconfig')
 local util = require 'lspconfig.util'
 local servers = {
   'dhall_lsp_server',
@@ -101,6 +103,8 @@ local servers = {
 
 vim.opt.spell = true
 vim.opt.spelllang = { 'en_us' }
+
+lsp_status.register_progress()
 
 devicons.setup({default = true,})
 
@@ -173,6 +177,8 @@ local on_attach = function(client, bufnr)
   local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
   local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
 
+  lsp_status.on_attach(client)
+
   buf_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
 
   local opts = { noremap=true, silent=true }
@@ -198,19 +204,21 @@ end
 
 for _, lsp in ipairs(servers) do
   if lsp == 'purescriptls' then
-    nvim_lsp[lsp].setup {
+    lspconfig[lsp].setup {
       capabilities = capabilities,
       flags = { debounce_text_changes = 150,},
       on_attach = on_attach,
       root_dir = util.root_pattern('spago.dhall', 'flake.nix', 'psc-package.json', 'bower.json') or util.find_git_ancestor,
       settings = {
         purescript = {
+          buildOpenedFiles = true,
           formatter = "purs-tidy",
+          fullBuildOnSave = true,
         },
       },
     }
   else 
-    nvim_lsp[lsp].setup {
+    lspconfig[lsp].setup {
       capabilities = capabilities,
       flags = {
         debounce_text_changes = 150,
