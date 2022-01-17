@@ -41,7 +41,7 @@
     };
     window = {
       decorations = "full";
-      startup_mode = "Fullscreen";
+      startup_mode = "Windowed";
     };
   };
 }
