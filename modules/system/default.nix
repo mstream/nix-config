@@ -20,6 +20,12 @@ _: {
   system.defaults.finder = {
     AppleShowAllExtensions = true;
   };
+  system.defaults.NSGlobalDomain = {
+    AppleFontSmoothing = null;
+    InitialKeyRepeat = null;
+    KeyRepeat = 10;
+  };
+  system.defaults.spaces.spans-displays = false;
   system.keyboard = {
     enableKeyMapping = true;
     remapCapsLockToEscape = true;

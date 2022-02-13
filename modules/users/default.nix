@@ -12,6 +12,7 @@
         dhall-lsp-server
         easy-ps.purs-tidy
         easy-ps.purescript-language-server
+        gradle
         nixfmt
         nodejs
         nodePackages.htmlhint

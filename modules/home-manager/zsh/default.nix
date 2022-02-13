@@ -1,14 +1,24 @@
 {
+  autocd = false;
   enable = true;
+  enableSyntaxHighlighting = true;
   enableCompletion = true;
+  enableAutosuggestions = true;
   initExtra = builtins.readFile ./zshrc;
   prezto = {
+    autosuggestions.color = "fg=blue";
+    caseSensitive = false;
     color = true;
     editor = {
+      dotExpansion = true;
       keymap = "vi";
       promptContext = true;
     };
     enable = true;
+    historySubstring = {
+      foundColor = "fg=blue";
+      notFoundColor = "fg=red";
+    };
     pmodules = [
       "environment"
       "terminal"
@@ -31,6 +41,7 @@
     ];
     prompt = {
       pwdLength = "short";
+      # showReturnVal = "true";
       theme = "sorin";
     };
   };

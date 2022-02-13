@@ -104,6 +104,14 @@ local servers = {
 vim.opt.spell = true
 vim.opt.spelllang = { 'en_us' }
 
+vim.diagnostic.config({
+  virtual_text = true,
+  signs = true,
+  underline = true,
+  update_in_insert = false,
+  severity_sort = true,
+})
+
 lsp_status.register_progress()
 
 devicons.setup({default = true,})

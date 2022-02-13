@@ -2,7 +2,15 @@
   enable = true;
   settings = {
     background_opacity = 0.95;
-    font = { size = 18; };
+    font = {
+      size = 18;
+      normal.family = "VictorMono Nerd Font Mono";
+      normal.style = "Medium";
+      bold.family = "VictorMono Nerd Font Mono";
+      bold.style = "Bold";
+      italic.family = "VictorMono Nerd Font Mono";
+      italic.style = "Italic";
+    };
     key_bindings = [
       {
         key = "H";
