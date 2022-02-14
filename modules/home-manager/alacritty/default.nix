@@ -1,7 +1,6 @@
 {
   enable = true;
   settings = {
-    background_opacity = 0.95;
     font = {
       size = 18;
       normal.family = "VictorMono Nerd Font Mono";
@@ -49,6 +48,7 @@
     };
     window = {
       decorations = "full";
+      opacity = 0.95;
       startup_mode = "Windowed";
     };
   };
