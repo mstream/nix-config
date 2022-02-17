@@ -19,7 +19,6 @@
         nodePackages.prettier
         nodePackages.purty
         perl
-        purescript
         ripgrep
         rnix-lsp
         spago
