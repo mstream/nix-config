@@ -19,6 +19,7 @@
         nodePackages.prettier
         nodePackages.purty
         perl
+        pinentry
         ripgrep
         rnix-lsp
         spago
