@@ -19,7 +19,7 @@
     nur.url = "github:nix-community/NUR";
   };
 
-  outputs = { self, nixpkgs, darwin, flake-utils, home-manager, easy-purescript-nix, ... }@inputs:
+  outputs = { self, nixpkgs, darwin, flake-utils, home-manager, easy-purescript-nix, nur, ... }@inputs:
     {
       darwinConfigurations =
         flake-utils.lib.eachSystem [ "aarch64-darwin" "x86_64-darwin" ]
@@ -28,6 +28,7 @@
               macbook = darwin.lib.darwinSystem {
                 inherit system;
                 modules = [
+                  (_: { nixpkgs.overlays = [ nur.overlay (import ./overlays/darwin-bin.nix) ]; })
                   home-manager.darwinModule
                   ./modules/documentation/default.nix
                   ./modules/environment/default.nix

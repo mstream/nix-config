@@ -2,7 +2,7 @@
   enable = true;
   extensions = with pkgs.nur.repos.rycee.firefox-addons;
     [ ublock-origin ];
-  package = pkgs.runCommand "firefox-0.0.0" { } "mkdir $out";
+  package = pkgs.firefox-darwin-bin;
   profiles = {
     mstream = {
       bookmarks = {
@@ -23,7 +23,7 @@
         };
       };
       isDefault = true;
-      name = "MStream";
+      name = "mstream";
     };
   };
 }
