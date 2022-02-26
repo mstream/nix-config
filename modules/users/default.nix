@@ -13,6 +13,7 @@
         easy-ps.purs-tidy
         easy-ps.purescript-language-server
         exercism
+        ghc
         gradle
         nixfmt
         nodejs
