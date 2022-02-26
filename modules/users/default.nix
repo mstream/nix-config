@@ -23,6 +23,7 @@
         ripgrep
         rnix-lsp
         spago
+        stack
         statix
         unixtools.watch
       ];
