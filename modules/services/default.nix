@@ -57,16 +57,19 @@
   };
   services.yabai = {
     config = {
+      active_window_border_color = "0xff00FF00";
       layout = "bsp";
       enableScriptingAddition = true;
+      external_bar = "all:32:24";
       auto_balance = "on";
       split_ratio = "0.5";
       window_placement = "second_child";
       window_gap = 8;
       top_padding = 8;
-      bottom_padding = 32;
+      bottom_padding = 8;
       left_padding = 8;
       right_padding = 8;
+      normal_window_border_color = "0xff888888";
       window_shadow = "off";
       window_border = "on";
       window_border_width = 1;

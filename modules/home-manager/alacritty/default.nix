@@ -43,7 +43,7 @@
       }
     ];
     shell = {
-      program = "/bin/zsh";
+      program = "zsh";
       args = [ "-l" "-c" "tmux attach || tmux" ];
     };
     window = {

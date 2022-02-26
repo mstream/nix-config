@@ -1,8 +1,10 @@
 _: {
   system.defaults.dock = {
     autohide = true;
-    autohide-delay = "0.25";
+    autohide-delay = "1000.0";
     autohide-time-modifier = "1.0";
+    dashboard-in-overlay = false;
+    enable-spring-load-actions-on-all-items = false;
     expose-animation-duration = "1.0";
     expose-group-by-app = true;
     launchanim = true;
@@ -15,15 +17,39 @@ _: {
     showhidden = true;
     show-recents = false;
     static-only = false;
-    tilesize = 32;
+    tilesize = 24;
   };
   system.defaults.finder = {
+    _FXShowPosixPathInTitle = false;
     AppleShowAllExtensions = true;
+    CreateDesktop = false;
+    QuitMenuItem = true;
+    FXEnableExtensionChangeWarning = true;
+  };
+  system.defaults.loginwindow = {
+    SHOWFULLNAME = false;
+    autoLoginUser = null;
+    GuestEnabled = false;
+    PowerOffDisabledWhileLoggedIn = false;
+    ShutDownDisabled = false;
+    ShutDownDisabledWhileLoggedIn = false;
+    SleepDisabled = false;
+    RestartDisabled = false;
+    RestartDisabledWhileLoggedIn = false;
+    DisableConsoleAccess = false;
   };
   system.defaults.NSGlobalDomain = {
-    AppleFontSmoothing = null;
-    InitialKeyRepeat = null;
-    KeyRepeat = 10;
+    _HIHideMenuBar = true;
+    AppleFontSmoothing = 2;
+    AppleInterfaceStyle = "Dark";
+    ApplePressAndHoldEnabled = false;
+    InitialKeyRepeat = 0;
+    KeyRepeat = 0;
+    NSAutomaticCapitalizationEnabled = false;
+    NSAutomaticDashSubstitutionEnabled = false;
+    NSAutomaticPeriodSubstitutionEnabled = false;
+    NSAutomaticQuoteSubstitutionEnabled = false;
+    NSAutomaticSpellingCorrectionEnabled = false;
   };
   system.defaults.spaces.spans-displays = false;
   system.keyboard = {
