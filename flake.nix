@@ -28,12 +28,13 @@
               macbook = darwin.lib.darwinSystem {
                 inherit system;
                 modules = [
-                  (_: { nixpkgs.overlays = [ nur.overlay (import ./overlays/darwin-bin.nix) ]; })
+                  (_: { nixpkgs.overlays = [ nur.overlay ]; })
                   home-manager.darwinModule
                   ./modules/documentation/default.nix
                   ./modules/environment/default.nix
                   ./modules/fonts/default.nix
                   ./modules/home-manager/default.nix
+                  ./modules/homebrew/default.nix
                   ({ pkgs, ... }: (import ./modules/nix/default.nix { inherit pkgs; inherit system; }))
                   (import ./modules/nixpkgs/default.nix { inherit inputs; })
                   ./modules/programs/default.nix

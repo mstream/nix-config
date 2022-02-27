@@ -1,8 +1,11 @@
 { pkgs, ... }: {
   enable = true;
-  extensions = with pkgs.nur.repos.rycee.firefox-addons;
-    [ ublock-origin ];
-  package = pkgs.firefox-darwin-bin;
+  extensions = with pkgs.nur.repos.rycee.firefox-addons; [
+    browserpass
+    ublock-origin
+    vimium
+  ];
+  package = pkgs.runCommand "firefox-0.0.0" { } "mkdir $out";
   profiles = {
     mstream = {
       bookmarks = {
