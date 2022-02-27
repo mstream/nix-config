@@ -2,4 +2,4 @@
 
 set -e
 
-darwin-rebuild switch --flake .#macbook.aarch64-darwin
+./switch.sh aarch64-darwin
