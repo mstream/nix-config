@@ -25,8 +25,24 @@
           url = "https://pursuit.purescript.org/";
         };
       };
+      id = 0;
       isDefault = true;
       name = "mstream";
+      settings = {
+        "app.update.auto" = false;
+        "browser.newtabpage.enabled" = false;
+        "browser.startup.homepage" = "https://google.com";
+        "privacy.trackingprotection.enabled" = true;
+        "privacy.trackingprotection.socialtracking.enabled" = true;
+        "privacy.trackingprotection.socialtracking.annotate.enabled" = true;
+        "services.sync.declinedEngines" = "addons,passwords,prefs";
+        "services.sync.engine.addons" = false;
+        "services.sync.engineStatusChanged.addons" = true;
+        "services.sync.engine.passwords" = false;
+        "services.sync.engine.prefs" = false;
+        "services.sync.engineStatusChanged.prefs" = true;
+        "signon.rememberSignons" = false;
+      };
     };
   };
 }
