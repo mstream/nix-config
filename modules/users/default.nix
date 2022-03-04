@@ -10,6 +10,7 @@
         cachix
         dhall
         dhall-lsp-server
+        docker
         easy-ps.purs-tidy
         easy-ps.purescript-language-server
         exercism
