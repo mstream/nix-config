@@ -7,6 +7,7 @@ _: {
     casks = [
       "firefox"
       "discord"
+      "microsoft-teams"
       "slack"
       "spotify"
     ];
