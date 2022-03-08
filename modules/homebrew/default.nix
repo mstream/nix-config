@@ -7,6 +7,7 @@ _: {
     casks = [
       "firefox"
       "discord"
+      "intellij-idea-ce"
       "microsoft-teams"
       "slack"
       "spotify"

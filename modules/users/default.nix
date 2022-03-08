@@ -16,6 +16,7 @@
         exercism
         ghc
         gradle
+        jdk11
         nixfmt
         nodejs
         nodePackages.htmlhint
