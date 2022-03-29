@@ -1,5 +1,5 @@
-{ easy-ps, pkgs, ... }: {
-
+{ easy-ps, pkgs, ... }:
+{
   users = {
     nix.configureBuildUsers = true;
     users.mstream = {
@@ -11,12 +11,13 @@
         dhall
         dhall-lsp-server
         docker
+        easy-ps.purs
         easy-ps.purs-tidy
         easy-ps.purescript-language-server
         exercism
-        ghc
         gradle
         jdk11
+        kubectl
         nixfmt
         nodejs
         nodePackages.htmlhint
@@ -24,10 +25,10 @@
         nodePackages.purty
         perl
         pinentry
+        podman
         ripgrep
         rnix-lsp
         spago
-        stack
         statix
         unixtools.watch
       ];

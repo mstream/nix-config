@@ -80,9 +80,11 @@ autocmd BufNewFile,BufRead *.dhall setf dhall
 autocmd BufNewFile,BufRead *.nix setf nix
 autocmd BufNewFile,BufRead *.purs setf purescript
 autocmd BufWritePre *.dhall lua vim.lsp.buf.formatting_sync(nil, 1000)
+autocmd BufWritePre *.hs lua vim.lsp.buf.formatting_sync(nil, 1000)
+autocmd BufWritePre *.lhs lua vim.lsp.buf.formatting_sync(nil, 1000)
 autocmd BufWritePre *.nix lua vim.lsp.buf.formatting_sync(nil, 1000)
 autocmd BufWritePre *.purs lua vim.lsp.buf.formatting_sync(nil, 1000)
-"autocmd BufWritePre *.purs lua vim.lsp.buf.code_action({ source = { organizeImports = true } })
+autocmd BufWritePre *.purs lua vim.lsp.buf.code_action({ source = { organizeImports = true } })
 
 augroup gruvbox
   autocmd!
@@ -97,6 +99,7 @@ local lspconfig = require('lspconfig')
 local util = require 'lspconfig.util'
 local servers = {
   'dhall_lsp_server',
+  'hls',
   'rnix',
   'purescriptls',
 }
