@@ -6,6 +6,8 @@
       home = "/Users/mstream";
       name = "mstream";
       packages = with pkgs; [
+        aws
+        aws-sam-cli
         bat
         cachix
         dhall
