@@ -5,8 +5,9 @@ _: {
       "colima"
     ];
     casks = [
-      "firefox"
       "discord"
+      "docker"
+      "firefox"
       "intellij-idea"
       "microsoft-teams"
       "slack"
