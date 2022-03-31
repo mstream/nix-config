@@ -3,11 +3,15 @@ _: {
     autoUpdate = true;
     brews = [
       "colima"
+      "coreutils"
+      "kubefwd"
     ];
     casks = [
       "discord"
       "docker"
       "firefox"
+      "gimp"
+      "inkscape"
       "intellij-idea"
       "microsoft-teams"
       "slack"
@@ -26,6 +30,7 @@ _: {
       "homebrew/core"
       "homebrew/cask"
       "homebrew/cask-drivers"
+      "txn2/tap"
     ];
   };
 }

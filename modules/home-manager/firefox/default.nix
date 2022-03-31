@@ -30,6 +30,8 @@
       name = "mstream";
       settings = {
         "app.update.auto" = false;
+        "app.update.download.promptMaxAttempts" = 0;
+        "app.update.elevation.promptMaxAttempts" = 0;
         "browser.newtabpage.enabled" = false;
         "browser.startup.homepage" = "https://google.com";
         "privacy.trackingprotection.enabled" = true;

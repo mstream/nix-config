@@ -18,13 +18,17 @@
         easy-ps.purescript-language-server
         exercism
         gradle
+        heroku
         jdk11
         kubectl
         nixfmt
+        nmap
         nodejs
         nodePackages.htmlhint
         nodePackages.prettier
         nodePackages.purty
+        nodePackages.typescript
+        nodePackages.typescript-language-server
         perl
         pinentry
         podman
