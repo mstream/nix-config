@@ -48,7 +48,7 @@ vim.g.maplocalleader=','
 vim.opt.autoindent = true
 vim.opt.background = 'dark'
 vim.opt.backup = true
-vim.opt.backupdir = '~/.local/share/nvim/backup'
+vim.opt.backupdir = os.getenv( "HOME" ) .. '/.local/share/nvim/backup'
 vim.opt.clipboard = 'unnamed'
 vim.opt.cmdheight = 1
 vim.opt.completeopt = {'menu', 'menuone','noselect','preview'}
@@ -135,6 +135,8 @@ cmp.setup({
     end,
   },
   mapping = {
+    ['<C-p>'] = cmp.mapping.select_prev_item(),
+    ['<C-n>'] = cmp.mapping.select_next_item(),  
     ['<C-b>'] = cmp.mapping(cmp.mapping.scroll_docs(-4), { 'i', 'c' }),
     ['<C-f>'] = cmp.mapping(cmp.mapping.scroll_docs(4), { 'i', 'c' }),
     ['<C-Space>'] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' }),

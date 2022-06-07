@@ -12,14 +12,17 @@
     };
     flake-utils.url = "github:numtide/flake-utils";
     home-manager = {
-      url = "github:nix-community/home-manager/master";
+      url = "github:nix-community/home-manager/release-22.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
+    nixpkgs.url = "github:nixos/nixpkgs/22.05";
     nur.url = "github:nix-community/NUR";
   };
 
   outputs = { self, nixpkgs, darwin, flake-utils, home-manager, easy-purescript-nix, nur, ... }@inputs:
+    let
+      defaultGpgKey = "BE318F09150F6CB0724FFEC0319EE1D7FC029354";
+    in
     {
       darwinConfigurations =
         flake-utils.lib.eachSystem [ "aarch64-darwin" "x86_64-darwin" ]
@@ -33,7 +36,7 @@
                   ./modules/documentation/default.nix
                   ./modules/environment/default.nix
                   ./modules/fonts/default.nix
-                  ./modules/home-manager/default.nix
+                  ({ pkgs, ... }: (import ./modules/home-manager/default.nix { inherit defaultGpgKey; inherit pkgs; }))
                   ./modules/homebrew/default.nix
                   ({ pkgs, ... }: (import ./modules/nix/default.nix { inherit pkgs; inherit system; }))
                   (import ./modules/nixpkgs/default.nix { inherit inputs; })
