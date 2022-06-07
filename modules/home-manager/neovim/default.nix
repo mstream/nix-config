@@ -3,7 +3,10 @@
   viAlias = true;
   vimAlias = true;
   vimdiffAlias = true;
-  extraConfig = builtins.readFile ./init.vim;
+  extraConfig = 
+      ''
+      	lua require('init')
+      '';
   plugins = with pkgs.vimPlugins; [
     cmp-buffer
     cmp-calc

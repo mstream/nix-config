@@ -1,31 +1,3 @@
-let s:document_width = 72
-let s:indentation_width = 2
-
-filetype plugin indent on
-syntax on
-
-autocmd BufNewFile,BufRead *.dhall setf dhall
-autocmd BufNewFile,BufRead *.js setf javascript
-autocmd BufNewFile,BufRead *.nix setf nix
-autocmd BufWritePre *.dhall lua vim.lsp.buf.formatting_sync(nil, 1000)
-autocmd BufWritePre *.hs lua vim.lsp.buf.formatting_sync(nil, 1000)
-autocmd BufWritePre *.js lua vim.lsp.buf.formatting_sync(nil, 1000)
-autocmd BufWritePre *.lhs lua vim.lsp.buf.formatting_sync(nil, 1000)
-autocmd BufWritePre *.nix lua vim.lsp.buf.formatting_sync(nil, 1000)
-
-augroup purescript
-  autocmd!
-  autocmd BufNewFile,BufRead *.purs setf purescript
-  autocmd BufWritePre *.purs lua vim.lsp.buf.code_action({ source = { organizeImports = true } })
-  autocmd BufWritePre *.purs lua vim.lsp.buf.formatting_sync(nil, 1000)
-augroup END
-
-augroup gruvbox
-  autocmd!
-  autocmd VimEnter * ++nested colorscheme gruvbox
-augroup END
-
-lua << EOF
 local cmp = require'cmp'
 local devicons = require"nvim-web-devicons"
 local document_width=72
@@ -123,6 +95,103 @@ vim.api.nvim_set_keymap('x', '<Up>', '<NOP>', { noremap = true })
 vim.api.nvim_set_keymap('x', '<Down>', '<NOP>', { noremap = true })
 vim.api.nvim_set_keymap('x', '<Right>', '<NOP>', { noremap = true })
 vim.api.nvim_set_keymap('x', '<Left>', '<NOP>', { noremap = true })
+
+function set_filetype_autocmd (args)
+  vim.api.nvim_create_autocmd({'BufNewFile', 'BufRead'}, {
+    command = 'setf ' .. args.filetype,
+    group = args.group_id,
+    pattern = {'*.' .. args.extension},
+  })
+end
+
+function set_formatting_sync_autocmd (args)
+  vim.api.nvim_create_autocmd({'BufWritePre'}, {
+    command = 'lua vim.lsp.buf.formatting_sync(nil, 1000)',
+    group = args.group_id,
+    pattern = {'*.' .. args.extension},
+  })
+end
+
+local dhall_group_id = vim.api.nvim_create_augroup(
+  'Dhall', 
+  {clear = true}
+) 
+
+set_filetype_autocmd({
+  extension='dhall',
+  filetype='dhall',
+  group_id=dhall_group_id,
+})
+
+set_formatting_sync_autocmd({
+  extension='dhall',
+  group_id=dhall_group_id,
+})
+
+local gruvbox_group_id = vim.api.nvim_create_augroup(
+  'GruvBox', 
+  {clear = true}
+) 
+
+vim.api.nvim_create_autocmd({'VimEnter'}, {
+    command = 'colorscheme gruvbox',
+    group = gruvbox_group_id,
+    pattern = {'*'},
+  })
+
+local javascript_group_id = vim.api.nvim_create_augroup(
+  'JavaScript', 
+  {clear = true}
+) 
+
+set_filetype_autocmd({
+  extension='js',
+  filetype='javascript',
+  group_id=javascript_group_id,
+})
+
+set_formatting_sync_autocmd({
+  extension='js',
+  group_id=javascript_group_id,
+})
+
+local nix_group_id = vim.api.nvim_create_augroup(
+  'Nix', 
+  {clear = true}
+) 
+
+set_filetype_autocmd({
+  extension='nix',
+  filetype='nix',
+  group_id=nix_group_id,
+})
+
+set_formatting_sync_autocmd({
+  extension='js',
+  group_id=nix_group_id,
+})
+
+local purescript_group_id = vim.api.nvim_create_augroup(
+  'PureScript', 
+  {clear = true}
+) 
+
+set_filetype_autocmd({
+  extension='purs',
+  filetype='purescript',
+  group_id=purescript_group_id,
+})
+
+set_formatting_sync_autocmd({
+  extension='purs',
+  group_id=puresript_group_id,
+})
+
+vim.api.nvim_create_autocmd({'BufWritePre'}, {
+    command = 'lua vim.lsp.buf.code_action({ source = { organizeImports = true } })',
+    group = purescript_group_id,
+    pattern = {'*.purs'},
+  })
 
 lsp_status.register_progress()
 
@@ -260,5 +329,4 @@ for _, lsp in ipairs(servers) do
     }
   end
 end
-EOF
 

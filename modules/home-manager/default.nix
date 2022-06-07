@@ -37,6 +37,11 @@ let
       '';
     };
 
+    xdg.configFile.nvim = {
+      source = ../../dotfiles/nvim;
+      recursive = true;
+    };
+
     programs = {
       alacritty = import ./alacritty/default.nix;
       bat = import ./bat/default.nix;
