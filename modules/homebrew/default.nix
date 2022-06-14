@@ -16,6 +16,7 @@ _: {
       "microsoft-teams"
       "slack"
       "spotify"
+      "steam"
     ];
     cleanup = "zap";
     enable = true;
