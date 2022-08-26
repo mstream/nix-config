@@ -17,6 +17,8 @@ _: {
       "slack"
       "spotify"
       "steam"
+      "vlc"
+      "widelands"
     ];
     cleanup = "zap";
     enable = true;
