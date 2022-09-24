@@ -319,6 +319,17 @@ for _, lsp in ipairs(servers) do
         },
       },
     }
+  elseif lsp == 'tsserver' then
+    lspconfig[lsp].setup {
+      capabilities = capabilities,
+      cmd = {
+        "typescript-language-server",
+        "--stdio",
+        "--tsserver-path",
+        "/nix/store/i0b6bxss0zd5py08r1z11vjrav0l5a0w-typescript-4.6.4/lib/node_modules/typescript/lib/",
+      },
+      on_attach = on_attach,
+    }
   else 
     lspconfig[lsp].setup {
       capabilities = capabilities,
