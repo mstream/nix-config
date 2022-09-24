@@ -1,11 +1,11 @@
 _: {
   system.defaults.dock = {
     autohide = true;
-    autohide-delay = "1000.0";
-    autohide-time-modifier = "1.0";
+    autohide-delay = 1000.0;
+    autohide-time-modifier = 1.0;
     dashboard-in-overlay = false;
     enable-spring-load-actions-on-all-items = false;
-    expose-animation-duration = "1.0";
+    expose-animation-duration = 1.0;
     expose-group-by-app = true;
     launchanim = true;
     mineffect = "genie";

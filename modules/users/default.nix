@@ -1,7 +1,6 @@
 { easy-ps, pkgs, ... }:
 {
   users = {
-    nix.configureBuildUsers = true;
     users.mstream = {
       home = "/Users/mstream";
       name = "mstream";

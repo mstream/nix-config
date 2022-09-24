@@ -1,6 +1,5 @@
 _: {
   homebrew = {
-    autoUpdate = true;
     brews = [
       "colima"
       "coreutils"
@@ -20,14 +19,18 @@ _: {
       "vlc"
       "widelands"
     ];
-    cleanup = "zap";
     enable = true;
     extraConfig = ''
       cask "firefox", args: { language: "en-GB" }
     '';
     global = {
       brewfile = true;
-      noLock = true;
+      lockfiles = false;
+    };
+    onActivation = {
+      autoUpdate = true;
+      cleanup = "zap";
+      upgrade = true;
     };
     taps = [
       "homebrew/core"
