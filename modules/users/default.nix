@@ -28,6 +28,7 @@
         nodePackages.purty
         nodePackages.typescript
         nodePackages.typescript-language-server
+        pandoc
         perl
         pinentry
         podman
@@ -35,6 +36,7 @@
         rnix-lsp
         spago
         statix
+        tectonic
         unixtools.watch
       ];
     };

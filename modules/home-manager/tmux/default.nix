@@ -9,6 +9,7 @@
     bind l select-pane -R
     set -s escape-time 0
   '';
+  historyLimit = 5000;
   keyMode = "vi";
   prefix = "'C-Space'";
 }

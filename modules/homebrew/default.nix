@@ -17,7 +17,6 @@ _: {
       "spotify"
       "steam"
       "vlc"
-      "widelands"
     ];
     enable = true;
     extraConfig = ''
