@@ -15,5 +15,5 @@
       editor = "vim";
     };
   };
-  ignores = [ ".envrc" ".DS_Store" ];
+  ignores = [ ".direnv" ".DS_Store" ];
 }

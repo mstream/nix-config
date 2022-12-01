@@ -1,6 +1,8 @@
 { pkgs, defaultGpgKey, ... }:
 let
   userConfig = username: {
+    home.stateVersion = "22.11"; 
+
     home.file.ownProjects = {
       recursive = true;
       target = "Development/projects/${username}/.keep";
@@ -45,6 +47,7 @@ let
     programs = {
       alacritty = import ./alacritty/default.nix;
       bat = import ./bat/default.nix;
+      direnv = import ./direnv/default.nix;
       firefox = (import ./firefox/default.nix { inherit pkgs; });
       git = import ./git/default.nix;
       gpg = (import ./gpg/default.nix { inherit defaultGpgKey; });

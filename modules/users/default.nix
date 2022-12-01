@@ -20,6 +20,7 @@
         heroku
         jdk11
         kubectl
+        lua5_4
         nixfmt
         nmap
         nodejs

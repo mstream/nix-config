@@ -1,7 +1,7 @@
 { pkgs, ... }: {
   services.nix-daemon.enable = true;
   services.skhd = {
-    enable = true;
+    enable = false;
     package = pkgs.skhd;
     skhdConfig = ''
       cmd - return : alacritty
@@ -80,7 +80,7 @@
       window_placement = "second_child";
       window_shadow = "off";
     };
-    enable = true;
+    enable = false;
     extraConfig = ''
       yabai -m rule --add app='System Preferences' manage=off
       yabai -m rule --add app='Activity Monitor' manage=off

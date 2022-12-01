@@ -3,6 +3,7 @@ _: {
     brews = [
       "colima"
       "coreutils"
+      "ffmpeg"
       "kubefwd"
     ];
     casks = [
