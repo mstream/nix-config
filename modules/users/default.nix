@@ -16,6 +16,7 @@
         easy-ps.purs-tidy
         easy-ps.purescript-language-server
         exercism
+        git-crypt
         gradle
         heroku
         jdk11
@@ -38,6 +39,7 @@
         spago
         statix
         tectonic
+        tree
         unixtools.watch
       ];
     };

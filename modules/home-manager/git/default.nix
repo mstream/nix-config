@@ -14,6 +14,9 @@
       autocrlf = "input";
       editor = "vim";
     };
+    init = {
+      defaultBranch = "master"; 
+    };
   };
   ignores = [ ".direnv" ".DS_Store" ];
 }

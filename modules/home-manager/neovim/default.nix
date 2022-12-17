@@ -23,7 +23,7 @@
     lsp-status-nvim
     nvim-cmp
     nvim-lspconfig
-    nvim-treesitter
+    nvim-treesitter.withAllGrammars
     nvim-web-devicons
     plenary-nvim
     purescript-vim
