@@ -1,7 +1,11 @@
 {
+  aliases = {
+    br = "branch";
+    ci = "commit";
+    co = "checkout";
+    st = "status";
+  };
   enable = true;
-  userName = "mstream";
-  userEmail = "maciej.laciak@gmail.com";
   delta = {
     enable = true;
     options = {
@@ -18,5 +22,7 @@
       defaultBranch = "master"; 
     };
   };
-  ignores = [ ".direnv" ".DS_Store" ];
+  ignores = [ ".direnv" ".DS_Store" "*~" "*.swp" ];
+  userEmail = "maciej.laciak@gmail.com";
+  userName = "mstream";
 }

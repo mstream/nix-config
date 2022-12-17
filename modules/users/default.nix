@@ -9,6 +9,8 @@
         aws-sam-cli
         bat
         cachix
+        colima
+        coreutils
         dhall
         dhall-lsp-server
         docker
@@ -16,12 +18,16 @@
         easy-ps.purs-tidy
         easy-ps.purescript-language-server
         exercism
+        ffmpeg
+        inkscape
+        gimp
         git-crypt
         gradle
         heroku
         jdk11
         kubectl
         lua5_4
+        mplayer
         nixfmt
         nmap
         nodejs

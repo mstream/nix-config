@@ -1,28 +1,17 @@
 _: {
   homebrew = {
     brews = [
-      "colima"
-      "coreutils"
-      "ffmpeg"
       "kubefwd"
     ];
     casks = [
       "discord"
-      "docker"
-      "firefox"
-      "gimp"
-      "inkscape"
       "intellij-idea"
       "microsoft-teams"
       "slack"
       "spotify"
       "steam"
-      "vlc"
     ];
     enable = true;
-    extraConfig = ''
-      cask "firefox", args: { language: "en-GB" }
-    '';
     global = {
       brewfile = true;
       lockfiles = false;
