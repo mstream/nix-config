@@ -47,6 +47,7 @@ let
     programs = {
       alacritty = import ./alacritty/default.nix;
       bat = import ./bat/default.nix;
+      browserpass = import ./browserpass/default.nix;
       direnv = import ./direnv/default.nix;
       firefox = (import ./firefox/default.nix { inherit pkgs; });
       git = import ./git/default.nix;
@@ -54,6 +55,7 @@ let
       jq = import ./jq/default.nix;
       neovim = (import ./neovim/default.nix { inherit pkgs; });
       password-store = import ./password-store/default.nix;
+      thunderbird = (import ./thunderbird/default.nix { inherit pkgs; });
       tmux = import ./tmux/default.nix;
       zsh = import ./zsh/default.nix;
     };

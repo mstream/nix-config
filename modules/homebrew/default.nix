@@ -5,13 +5,18 @@ _: {
     ];
     casks = [
       "discord"
+      "firefox"
       "intellij-idea"
       "microsoft-teams"
       "slack"
       "spotify"
       "steam"
+      "thunderbird"
     ];
     enable = true;
+    extraConfig = ''
+      cask "firefox", args: { language: "en-GB" }
+    '';
     global = {
       brewfile = true;
       lockfiles = false;
