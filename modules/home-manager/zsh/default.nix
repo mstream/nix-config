@@ -16,7 +16,14 @@
     size = 20000;
   };
   historySubstringSearch = {};
-  initExtra = builtins.readFile ./zshrc;
+  initExtra = ''
+    unsetopt extended_glob
+
+    export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
+    gpgconf --launch gpg-agent
+
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+  '';
   initExtraBeforeCompInit = "";
   initExtraFirst = "";
   localVariables = {};

@@ -48,7 +48,11 @@
     };
     window = {
       decorations = "full";
+      dynamic_padding = true;
       opacity = 0.95;
+      scrolling = {
+        history = 0;
+      };
       startup_mode = "Windowed";
     };
   };
