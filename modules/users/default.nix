@@ -24,6 +24,7 @@
         git-crypt
         gradle
         heroku
+        java-language-server
         jdk11
         kubectl
         lua5_4
@@ -40,6 +41,7 @@
         perl
         pinentry
         podman
+        pwgen
         ripgrep
         rnix-lsp
         spago

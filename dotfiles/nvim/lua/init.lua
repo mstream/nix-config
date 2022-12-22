@@ -5,9 +5,11 @@ local indentation_width=2
 local lsp_status = require('lsp-status')
 local lspconfig = require('lspconfig')
 local util = require 'lspconfig.util'
+
 local servers = {
   'dhall_lsp_server',
   'hls',
+  'java_language_server',
   'purescriptls',
   'rnix',
   'tsserver'
@@ -59,42 +61,158 @@ vim.diagnostic.config({
   severity_sort = true,
 })
 
-vim.api.nvim_set_keymap('c', '<Up>', '<NOP>', { noremap = true })
-vim.api.nvim_set_keymap('c', '<Down>', '<NOP>', { noremap = true })
-vim.api.nvim_set_keymap('c', '<Right>', '<NOP>', { noremap = true })
-vim.api.nvim_set_keymap('c', '<Left>', '<NOP>', { noremap = true })
+function disable_arrow_keys (mode)
+  vim.api.nvim_set_keymap(
+    mode,
+    '<Up>',
+    '<NOP>',
+    { noremap = true }
+  )
 
-vim.api.nvim_set_keymap('i', '<Up>', '<NOP>', { noremap = true })
-vim.api.nvim_set_keymap('i', '<Down>', '<NOP>', { noremap = true })
-vim.api.nvim_set_keymap('i', '<Right>', '<NOP>', { noremap = true })
-vim.api.nvim_set_keymap('i', '<Left>', '<NOP>', { noremap = true })
+  vim.api.nvim_set_keymap(
+    mode,
+    '<Down>',
+    '<NOP>',
+    { noremap = true }
+  )
 
-vim.api.nvim_set_keymap('n', '<Up>', '<NOP>', { noremap = true })
-vim.api.nvim_set_keymap('n', '<Down>', '<NOP>', { noremap = true })
-vim.api.nvim_set_keymap('n', '<Right>', '<NOP>', { noremap = true })
-vim.api.nvim_set_keymap('n', '<Left>', '<NOP>', { noremap = true })
+  vim.api.nvim_set_keymap(
+    mode,
+    '<Right>',
+    '<NOP>',
+    { noremap = true }
+  )
 
-vim.api.nvim_set_keymap('n', '<A-h>', '<C-w>h', { noremap = true, unique = true })
-vim.api.nvim_set_keymap('n', '<A-j>', '<C-w>j', { noremap = true, unique = true })
-vim.api.nvim_set_keymap('n', '<A-k>', '<C-w>k', { noremap = true, unique = true })
-vim.api.nvim_set_keymap('n', '<A-l>', '<C-w>l', { noremap = true, unique = true })
+  vim.api.nvim_set_keymap(
+    mode,
+    '<Left>',
+    '<NOP>',
+    { noremap = true }
+  )
+end
 
-vim.api.nvim_set_keymap('n', '<Leader>ff', '<cmd>Telescope find_files<CR>', { noremap = true })
-vim.api.nvim_set_keymap('n', '<Leader>fg', '<cmd>Telescope live_grep<CR>', { noremap = true })
-vim.api.nvim_set_keymap('n', '<Leader>fb', '<cmd>Telescope buffers<CR>', { noremap = true })
-vim.api.nvim_set_keymap('n', '<Leader>fh', '<cmd>Telescope help_tags<CR>', { noremap = true })
+disable_arrow_keys('c')
+disable_arrow_keys('i')
+disable_arrow_keys('n')
 
-vim.api.nvim_set_keymap('n', '<Leader>nh', ':nohlsearch<CR>', { noremap = true, unique = true })
+vim.api.nvim_set_keymap(
+  'n', 
+  '<A-h>', 
+  '<C-w>h', 
+  { noremap = true, unique = true }
+)
 
-vim.api.nvim_set_keymap('t', '<Up>', '<NOP>', { noremap = true })
-vim.api.nvim_set_keymap('t', '<Down>', '<NOP>', { noremap = true })
-vim.api.nvim_set_keymap('t', '<Right>', '<NOP>', { noremap = true })
-vim.api.nvim_set_keymap('t', '<Left>', '<NOP>', { noremap = true })
+vim.api.nvim_set_keymap(
+  'n',
+  '<A-j>',
+  '<C-w>j',
+  { noremap = true, unique = true }
+)
 
-vim.api.nvim_set_keymap('x', '<Up>', '<NOP>', { noremap = true })
-vim.api.nvim_set_keymap('x', '<Down>', '<NOP>', { noremap = true })
-vim.api.nvim_set_keymap('x', '<Right>', '<NOP>', { noremap = true })
-vim.api.nvim_set_keymap('x', '<Left>', '<NOP>', { noremap = true })
+vim.api.nvim_set_keymap(
+  'n',
+  '<A-k>',
+  '<C-w>k',
+  { noremap = true, unique = true }
+)
+
+vim.api.nvim_set_keymap(
+  'n',
+  '<A-l>',
+  '<C-w>l',
+  { noremap = true, unique = true }
+)
+
+vim.api.nvim_set_keymap(
+  'n', 
+  '<Leader>ff', 
+  '<cmd>Telescope find_files<CR>', 
+  { noremap = true }
+)
+
+vim.api.nvim_set_keymap(
+  'n', 
+  '<Leader>fg', 
+  '<cmd>Telescope live_grep<CR>', 
+  { noremap = true }
+)
+
+vim.api.nvim_set_keymap(
+  'n', 
+  '<Leader>fb', 
+  '<cmd>Telescope buffers<CR>', 
+  { noremap = true }
+)
+
+vim.api.nvim_set_keymap(
+  'n',
+  '<Leader>fh',
+  '<cmd>Telescope help_tags<CR>', 
+  { noremap = true }
+)
+
+vim.api.nvim_set_keymap(
+  'n',
+  '<Leader>nh',
+  ':nohlsearch<CR>', 
+  { noremap = true, unique = true }
+)
+
+vim.api.nvim_set_keymap(
+  't', 
+  '<Up>', 
+  '<NOP>', 
+  { noremap = true }
+)
+
+vim.api.nvim_set_keymap(
+  't', 
+  '<Down>', 
+  '<NOP>', 
+  { noremap = true }
+)
+
+vim.api.nvim_set_keymap(
+  't', 
+  '<Right>', 
+  '<NOP>', 
+  { noremap = true }
+)
+
+vim.api.nvim_set_keymap(
+  't', 
+  '<Left>', 
+  '<NOP>', 
+  { noremap = true }
+)
+
+vim.api.nvim_set_keymap(
+  'x', 
+  '<Up>', 
+  '<NOP>', 
+  { noremap = true }
+)
+
+vim.api.nvim_set_keymap(
+  'x', 
+  '<Down>', 
+  '<NOP>', 
+  { noremap = true }
+)
+
+vim.api.nvim_set_keymap(
+  'x', 
+  '<Right>', 
+  '<NOP>', 
+  { noremap = true }
+)
+
+vim.api.nvim_set_keymap(
+  'x', 
+  '<Left>', 
+  '<NOP>', 
+  { noremap = true }
+)
 
 function set_filetype_autocmd (args)
   vim.api.nvim_create_autocmd({'BufNewFile', 'BufRead'}, {
@@ -112,20 +230,58 @@ function set_formatting_sync_autocmd (args)
   })
 end
 
-local dhall_group_id = vim.api.nvim_create_augroup(
-  'Dhall', 
-  {clear = true}
-) 
+function create_augroup (args)
+  local group_id = vim.api.nvim_create_augroup(
+    args.name, 
+    {clear = true}
+  ) 
 
-set_filetype_autocmd({
+  set_filetype_autocmd({
+    extension=args.extension,
+    filetype=args.filetype,
+    group_id=group_id,
+  })
+
+  set_formatting_sync_autocmd({
+    extension=args.extension,
+    group_id=group_id,
+  })
+end
+
+create_augroup({
   extension='dhall',
   filetype='dhall',
-  group_id=dhall_group_id,
+  name='Dhall',
 })
 
-set_formatting_sync_autocmd({
-  extension='dhall',
-  group_id=dhall_group_id,
+create_augroup({
+  extension='gradle',
+  filetype='groovy',
+  name='Gradle',
+})
+
+create_augroup({
+  extension='java',
+  filetype='java',
+  name='Java',
+})
+
+create_augroup({
+  extension='js',
+  filetype='javascript',
+  name='JavaScript',
+})
+
+create_augroup({
+  extension='nix',
+  filetype='nix',
+  name='Nix',
+})
+
+create_augroup({
+  extension='purs',
+  filetype='purescript',
+  name='Purescript',
 })
 
 local gruvbox_group_id = vim.api.nvim_create_augroup(
@@ -139,59 +295,14 @@ vim.api.nvim_create_autocmd({'VimEnter'}, {
     pattern = {'*'},
   })
 
-local javascript_group_id = vim.api.nvim_create_augroup(
-  'JavaScript', 
-  {clear = true}
-) 
-
-set_filetype_autocmd({
-  extension='js',
-  filetype='javascript',
-  group_id=javascript_group_id,
-})
-
-set_formatting_sync_autocmd({
-  extension='js',
-  group_id=javascript_group_id,
-})
-
-local nix_group_id = vim.api.nvim_create_augroup(
-  'Nix', 
-  {clear = true}
-) 
-
-set_filetype_autocmd({
-  extension='nix',
-  filetype='nix',
-  group_id=nix_group_id,
-})
-
-set_formatting_sync_autocmd({
-  extension='js',
-  group_id=nix_group_id,
-})
-
-local purescript_group_id = vim.api.nvim_create_augroup(
-  'PureScript', 
-  {clear = true}
-) 
-
-set_filetype_autocmd({
-  extension='purs',
-  filetype='purescript',
-  group_id=purescript_group_id,
-})
-
-set_formatting_sync_autocmd({
-  extension='purs',
-  group_id=puresript_group_id,
-})
-
-vim.api.nvim_create_autocmd({'BufWritePre'}, {
+vim.api.nvim_create_autocmd(
+  {'BufWritePre'}, 
+  {
     command = 'lua vim.lsp.buf.code_action({ source = { organizeImports = true } })',
     group = purescript_group_id,
     pattern = {'*.purs'},
-  })
+  }
+)
 
 lsp_status.register_progress()
 
@@ -264,8 +375,6 @@ require'nvim-treesitter.configs'.setup {
 }
 
 local on_attach = function(client, bufnr)
-  --lsp_status.on_attach(client)
-
   vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
 
   local bufopts = { noremap=true, silent=true }
@@ -289,12 +398,21 @@ local on_attach = function(client, bufnr)
 end
 
 for _, lsp in ipairs(servers) do
-  if lsp == 'purescriptls' then
+  if lsp == 'java_language_server' then
+    lspconfig[lsp].setup {
+      cmd = {'java-language-server'}
+    }
+  elseif lsp == 'purescriptls' then
     lspconfig[lsp].setup {
       capabilities = capabilities,
       flags = { debounce_text_changes = 150,},
       on_attach = on_attach,
-      root_dir = util.root_pattern('spago.dhall', 'flake.nix', 'psc-package.json', 'bower.json') or util.find_git_ancestor,
+      root_dir = util.root_pattern(
+        'spago.dhall', 
+        'flake.nix', 
+        'psc-package.json', 
+        'bower.json'
+      ) or util.find_git_ancestor,
       settings = {
         purescript = {
           addSpagoSources = true,
