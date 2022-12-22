@@ -1,8 +1,8 @@
 {
   autocd = false;
-  cdpath = [];
+  cdpath = [ ];
   completionInit = "autoload -U compinit && compinit";
-  dirHashes = {};
+  dirHashes = { };
   enable = true;
   enableAutosuggestions = true;
   enableCompletion = true;
@@ -15,7 +15,7 @@
     share = true;
     size = 20000;
   };
-  historySubstringSearch = {};
+  historySubstringSearch = { };
   initExtra = ''
     unsetopt extended_glob
 
@@ -26,11 +26,11 @@
   '';
   initExtraBeforeCompInit = "";
   initExtraFirst = "";
-  localVariables = {};
+  localVariables = { };
   loginExtra = "";
   logoutExtra = "";
-  oh-my-zsh = {};
-  plugins = [];
+  oh-my-zsh = { };
+  plugins = [ ];
   prezto = {
     autosuggestions.color = "fg=blue";
     caseSensitive = false;
@@ -42,8 +42,8 @@
     };
     enable = true;
     extraConfig = "";
-    extraFunctions = [];
-    extraModules = [];
+    extraFunctions = [ ];
+    extraModules = [ ];
     historySubstring = {
       foundColor = "fg=blue";
       notFoundColor = "fg=red";
@@ -82,7 +82,10 @@
     };
   };
   profileExtra = "";
-  sessionVariables = {};
-  shellAliases = {};
-  shellGlobalAliases = {};
+  sessionVariables = { };
+  shellAliases = {
+    la = "ls -a -l";
+    ll = "ls -l";
+  };
+  shellGlobalAliases = { };
 }
