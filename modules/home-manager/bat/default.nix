@@ -1,4 +1,4 @@
 {
   enable = true;
-  config = { theme = "GitHub"; };
+  config = { theme = "gruvbox-dark"; };
 }

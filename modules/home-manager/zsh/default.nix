@@ -7,7 +7,8 @@
   enableAutosuggestions = true;
   enableCompletion = true;
   enableSyntaxHighlighting = true;
-  envExtra = "";
+  envExtra = ''
+  '';
   history = {
     ignoreDups = true;
     ignoreSpace = true;
@@ -76,6 +77,11 @@
     prompt = {
       pwdLength = "short";
       theme = "sorin";
+    };
+    syntaxHighlighting = {
+      styles = {
+        comment = "fg=white";
+      };
     };
     utility = {
       safeOps = true;
