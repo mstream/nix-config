@@ -2,7 +2,6 @@
   enable = true;
   extensions = with pkgs.nur.repos.rycee.firefox-addons; [
     browserpass
-    https-everywhere
     privacy-badger
     ublock-origin
     vimium
