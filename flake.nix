@@ -22,6 +22,7 @@
   outputs = { self, nixpkgs, darwin, flake-utils, home-manager, easy-purescript-nix, nur, ... }@inputs:
     let
       defaultGpgKey = "BE318F09150F6CB0724FFEC0319EE1D7FC029354";
+      fontSize = 24;
     in
     {
       darwinConfigurations =
@@ -36,13 +37,13 @@
                   ./modules/documentation/default.nix
                   ./modules/environment/default.nix
                   ./modules/fonts/default.nix
-                  ({ pkgs, ... }: (import ./modules/home-manager/default.nix { inherit defaultGpgKey; inherit pkgs; }))
+                  ({ pkgs, ... }: (import ./modules/home-manager/default.nix { inherit defaultGpgKey fontSize pkgs; }))
                   ./modules/homebrew/default.nix
-                  ({ pkgs, ... }: (import ./modules/nix/default.nix { inherit pkgs; inherit system; }))
+                  ({ pkgs, ... }: (import ./modules/nix/default.nix { inherit pkgs system; }))
                   (import ./modules/nixpkgs/default.nix { inherit inputs; })
                   ./modules/programs/default.nix
-                  ./modules/services/default.nix
-                  ./modules/system/default.nix
+                  ({ pkgs, ... }: (import ./modules/services/default.nix { }))
+                  (import ./modules/system/default.nix { inherit fontSize; })
                   ({ pkgs, ... }: (import ./modules/users/default.nix {
                     inherit pkgs;
                     easy-ps = import easy-purescript-nix { inherit pkgs; };

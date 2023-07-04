@@ -1,4 +1,5 @@
-_: {
+{ fontSize, ... }:
+{
   system.defaults.dock = {
     autohide = true;
     autohide-delay = 1000.0;
@@ -17,7 +18,7 @@ _: {
     showhidden = true;
     show-recents = false;
     static-only = false;
-    tilesize = 24;
+    tilesize = fontSize;
   };
   system.defaults.finder = {
     _FXShowPosixPathInTitle = false;

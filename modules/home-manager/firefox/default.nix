@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ fontSize, pkgs, ... }: {
   enable = true;
   extensions = with pkgs.nur.repos.rycee.firefox-addons; [
     browserpass
@@ -33,6 +33,7 @@
         "app.update.auto" = false;
         "app.update.download.promptMaxAttempts" = 0;
         "app.update.elevation.promptMaxAttempts" = 0;
+        "browser.display.auto_quality_min_font_size" = fontSize;
         "browser.newtabpage.enabled" = false;
         "browser.startup.homepage" = "https://google.com";
         "privacy.trackingprotection.enabled" = true;

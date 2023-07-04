@@ -1,8 +1,9 @@
+{ fontSize, ... }:
 {
   enable = true;
   settings = {
     font = {
-      size = 18;
+      size = fontSize;
       normal.family = "VictorMono Nerd Font Mono";
       normal.style = "Medium";
       bold.family = "VictorMono Nerd Font Mono";

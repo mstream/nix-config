@@ -5,7 +5,10 @@ _: {
     ];
     casks = [
       "discord"
+      "docker"
       "firefox"
+      "google-chrome"
+      "inkscape"
       "intellij-idea"
       "microsoft-teams"
       "slack"

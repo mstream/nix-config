@@ -49,6 +49,7 @@
         tectonic
         tree
         unixtools.watch
+        yarn
       ];
     };
   };

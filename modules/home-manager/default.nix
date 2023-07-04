@@ -1,7 +1,7 @@
-{ pkgs, defaultGpgKey, ... }:
+{ defaultGpgKey, fontSize, pkgs, ... }:
 let
   userConfig = username: {
-    home.stateVersion = "22.11"; 
+    home.stateVersion = "22.11";
 
     home.file.ownProjects = {
       recursive = true;
@@ -45,11 +45,11 @@ let
     };
 
     programs = {
-      alacritty = import ./alacritty/default.nix;
+      alacritty = import ./alacritty/default.nix { inherit fontSize; };
       bat = import ./bat/default.nix;
       browserpass = import ./browserpass/default.nix;
       direnv = import ./direnv/default.nix;
-      firefox = (import ./firefox/default.nix { inherit pkgs; });
+      firefox = (import ./firefox/default.nix { inherit fontSize pkgs; });
       git = import ./git/default.nix;
       gpg = (import ./gpg/default.nix { inherit defaultGpgKey; });
       jq = import ./jq/default.nix;
