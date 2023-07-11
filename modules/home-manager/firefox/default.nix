@@ -1,11 +1,5 @@
 { fontSize, pkgs, ... }: {
   enable = true;
-  extensions = with pkgs.nur.repos.rycee.firefox-addons; [
-    browserpass
-    privacy-badger
-    ublock-origin
-    vimium
-  ];
   package = pkgs.runCommand "firefox-0.0.0" { } "mkdir $out";
   profiles = {
     mstream = {
@@ -26,6 +20,12 @@
           url = "https://pursuit.purescript.org/";
         };
       };
+      extensions = with pkgs.nur.repos.rycee.firefox-addons; [
+        browserpass
+        privacy-badger
+        ublock-origin
+        vimium
+      ];
       id = 0;
       isDefault = true;
       name = "mstream";
