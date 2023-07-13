@@ -12,11 +12,9 @@
         colima
         coreutils
         dhall
-        dhall-lsp-server
         docker
         easy-ps.purs
         easy-ps.purs-tidy
-        easy-ps.purescript-language-server
         exercism
         ffmpeg
         inkscape
@@ -24,7 +22,6 @@
         git-crypt
         gradle
         heroku
-        java-language-server
         jdk11
         kubectl
         lua5_4
@@ -36,14 +33,12 @@
         nodePackages.prettier
         nodePackages.purty
         nodePackages.typescript
-        nodePackages.typescript-language-server
         pandoc
         perl
         pinentry
         podman
         pwgen
         ripgrep
-        rnix-lsp
         spago
         statix
         tectonic

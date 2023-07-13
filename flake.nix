@@ -32,7 +32,12 @@
               macbook = darwin.lib.darwinSystem {
                 inherit system;
                 modules = [
-                  (_: { nixpkgs.overlays = [ nur.overlay ]; })
+                  (_: { nixpkgs.overlays = [ 
+                          nur.overlay 
+                          (final: prev: {nvchad = prev.callPackage ../packages/nvchad {};}) 
+                        ]; 
+                      }
+                  )
                   home-manager.darwinModule
                   ./modules/documentation/default.nix
                   ./modules/environment/default.nix

@@ -1,5 +1,7 @@
 { defaultGpgKey, fontSize, pkgs, ... }:
 let
+  nvchad = pkgs.callPackage ../../packages/nvchad {};
+
   userConfig = username: {
     home.stateVersion = "22.11";
 
@@ -39,9 +41,15 @@ let
       '';
     };
 
-    xdg.configFile.nvim = {
-      source = ../../dotfiles/nvim;
-      recursive = true;
+    home.packages = with pkgs; [
+      #lua-language-server
+      #nodePackages.bash-language-server 
+      #tree-sitter
+      #wget
+    ];
+
+    xdg.configFile."nvim" = {
+      source = "${nvchad}";
     };
 
     programs = {
