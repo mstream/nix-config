@@ -1,4 +1,4 @@
-{ defaultGpgKey, fontSize, pkgs, ... }:
+{ defaultGpgKey, fontSize, pkgs, username, ... }:
 let
   nvchad = pkgs.callPackage ../../packages/nvchad {};
 
@@ -41,12 +41,7 @@ let
       '';
     };
 
-    home.packages = with pkgs; [
-      #lua-language-server
-      #nodePackages.bash-language-server 
-      #tree-sitter
-      #wget
-    ];
+    home.packages = with pkgs; [];
 
     xdg.configFile."nvim" = {
       source = "${nvchad}";
@@ -57,13 +52,13 @@ let
       bat = import ./bat/default.nix;
       browserpass = import ./browserpass/default.nix;
       direnv = import ./direnv/default.nix;
-      firefox = (import ./firefox/default.nix { inherit fontSize pkgs; });
-      git = import ./git/default.nix;
+      firefox = (import ./firefox/default.nix { inherit fontSize pkgs username; });
+      git = (import ./git/default.nix { inherit username; });
       gpg = (import ./gpg/default.nix { inherit defaultGpgKey; });
       jq = import ./jq/default.nix;
       neovim = (import ./neovim/default.nix { inherit pkgs; });
       password-store = import ./password-store/default.nix;
-      thunderbird = (import ./thunderbird/default.nix { inherit pkgs; });
+      thunderbird = (import ./thunderbird/default.nix { inherit pkgs username; });
       tmux = import ./tmux/default.nix;
       zsh = import ./zsh/default.nix;
     };
@@ -75,5 +70,5 @@ in
     useUserPackages = true;
   };
 
-  home-manager.users.mstream = userConfig "mstream";
+  home-manager.users."${username}" = userConfig username;
 }

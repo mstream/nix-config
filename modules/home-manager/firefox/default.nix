@@ -1,8 +1,8 @@
-{ fontSize, pkgs, ... }: {
+{ fontSize, pkgs, username, ... }: {
   enable = true;
   package = pkgs.runCommand "firefox-0.0.0" { } "mkdir $out";
   profiles = {
-    mstream = {
+    "${username}" = {
       bookmarks = {
         comGithub = {
           keyword = "github";
@@ -28,7 +28,7 @@
       ];
       id = 0;
       isDefault = true;
-      name = "mstream";
+      name = username;
       settings = {
         "app.update.auto" = false;
         "app.update.download.promptMaxAttempts" = 0;

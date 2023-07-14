@@ -1,4 +1,4 @@
-{
+{ username }: {
   aliases = {
     br = "branch";
     ci = "commit";
@@ -24,5 +24,5 @@
   };
   ignores = [ ".direnv" ".DS_Store" "*~" "*.swp" ];
   userEmail = "maciej.laciak@gmail.com";
-  userName = "mstream";
+  userName = username;
 }

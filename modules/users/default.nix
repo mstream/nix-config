@@ -1,9 +1,9 @@
-{ easy-ps, pkgs, ... }:
+{ easy-ps, pkgs, username, ... }:
 {
   users = {
-    users.mstream = {
-      home = "/Users/mstream";
-      name = "mstream";
+    users."${username}" = {
+      home = "/Users/${username}";
+      name = "${username}";
       packages = with pkgs; [
         awscli
         aws-sam-cli

@@ -1,8 +1,8 @@
-{ pkgs, ... }: {
+{ pkgs, username, ... }: {
   enable = true;
   package = pkgs.runCommand "thunderbird-0.0.0" { } "mkdir $out";
   profiles = {
-    mstream = {
+    "${username}" = {
       isDefault = true;
     };
   };
