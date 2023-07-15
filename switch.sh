@@ -8,5 +8,8 @@ PLATFORM="$1"
 eval "$(/opt/homebrew/bin/brew shellenv)"
 brew analytics off
 
-nix build --show-trace ".#darwinConfigurations.macbook.${PLATFORM}.system"
+nix build \
+	--experimental-features 'nix-command flakes' \
+	--show-trace ".#darwinConfigurations.macbook.${PLATFORM}.system"
+
 ./result/sw/bin/darwin-rebuild switch --flake ".#macbook.${PLATFORM}"
