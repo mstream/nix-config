@@ -1,14 +1,17 @@
 { fontSize, ... }:
+let
+  family = "JetbrainsMono Nerd Font";
+in
 {
   enable = true;
   settings = {
     font = {
       size = fontSize;
-      normal.family = "VictorMono Nerd Font Mono";
+      normal.family = family;
       normal.style = "Medium";
-      bold.family = "VictorMono Nerd Font Mono";
+      bold.family = family;
       bold.style = "Bold";
-      italic.family = "VictorMono Nerd Font Mono";
+      italic.family = family;
       italic.style = "Italic";
     };
     key_bindings = [
