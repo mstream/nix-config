@@ -23,6 +23,7 @@
     let
       defaultGpgKey = "BE318F09150F6CB0724FFEC0319EE1D7FC029354";
       fontSize = 24;
+      home-manager-version = "23.05";
       username = "mstream";
     in
     {
@@ -33,17 +34,22 @@
               macbook = darwin.lib.darwinSystem {
                 inherit system;
                 modules = [
-                  (_: { nixpkgs.overlays = [ 
-                          nur.overlay 
-                          (final: prev: {nvchad = prev.callPackage ../packages/nvchad {};}) 
-                        ]; 
-                      }
+                  (_: {
+                    nixpkgs.overlays = [
+                      nur.overlay
+                      (final: prev: { nvchad = prev.callPackage ../packages/nvchad { }; })
+                    ];
+                  }
                   )
                   home-manager.darwinModule
                   ./modules/documentation/default.nix
                   ./modules/environment/default.nix
                   ./modules/fonts/default.nix
-                  ({ pkgs, ... }: (import ./modules/home-manager/default.nix { inherit defaultGpgKey fontSize pkgs username; }))
+                  ({ pkgs, ... }: (import ./modules/home-manager/default.nix {
+                    inherit defaultGpgKey fontSize pkgs username;
+                    easy-ps = import easy-purescript-nix { inherit pkgs; };
+                    version = home-manager-version;
+                  }))
                   ./modules/homebrew/default.nix
                   ({ pkgs, ... }: (import ./modules/nix/default.nix { inherit pkgs system; }))
                   (import ./modules/nixpkgs/default.nix { inherit inputs; })
@@ -51,8 +57,7 @@
                   ({ pkgs, ... }: (import ./modules/services/default.nix { }))
                   (import ./modules/system/default.nix { inherit fontSize; })
                   ({ pkgs, ... }: (import ./modules/users/default.nix {
-                    inherit pkgs username;
-                    easy-ps = import easy-purescript-nix { inherit pkgs; };
+                    inherit username;
                   })
                   )
                 ];
