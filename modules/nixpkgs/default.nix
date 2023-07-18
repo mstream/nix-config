@@ -1,9 +1,9 @@
-{inputs, ...}: {
+{ nur, ... }: {
   nixpkgs = {
     config = {
       allowBroken = false;
       allowUnfree = false;
     };
-    overlays = with inputs; [ nur.overlay ];
+    overlays = import ../../overlays/nixpkgs.nix { inherit nur; };
   };
 }

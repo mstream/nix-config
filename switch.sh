@@ -1,6 +1,6 @@
 #! /usr/bin/env bash
 
-set -e
+set -e -E
 
 PLATFORM="$1"
 HOMEBREW_INSTALL_SCRIPT_URL="https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh"
