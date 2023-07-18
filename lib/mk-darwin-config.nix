@@ -1,4 +1,4 @@
-{ darwin, easy-purescript-nix, flake-utils, home-manager, nur, ... }:
+{ darwin, easy-purescript-nix, flake-utils, homebrew-bundle, homebrew-cask, homebrew-core, home-manager, nix-homebrew, nur, ... }:
 let
   inherit (import ../config/default.nix)
     defaultGpgKey
@@ -30,6 +30,20 @@ flake-utils.lib.eachSystem
         (_: import ../modules/services/default.nix { })
         (import ../modules/system/default.nix { inherit fontSize; })
         (_: import ../modules/users/default.nix { inherit username; })
+        nix-homebrew.darwinModules.nix-homebrew
+        {
+          nix-homebrew = {
+            enable = true;
+            enableRosetta = true;
+            mutableTaps = false;
+            taps = {
+              "homebrew/homebrew-bundle" = homebrew-bundle;
+              "homebrew/homebrew-core" = homebrew-core;
+              "homebrew/homebrew-cask" = homebrew-cask;
+            };
+            user = username;
+          };
+        }
       ];
     };
   }

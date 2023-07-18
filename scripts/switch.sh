@@ -5,9 +5,9 @@ set -e -E
 PLATFORM="$1"
 HOMEBREW_INSTALL_SCRIPT_URL="https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh"
 
-bash -c "$(curl -fsSL ${HOMEBREW_INSTALL_SCRIPT_URL})"
-eval "$(/opt/homebrew/bin/brew shellenv)"
-brew analytics off
+# bash -c "$(curl -fsSL ${HOMEBREW_INSTALL_SCRIPT_URL})"
+# eval "$(/opt/homebrew/bin/brew shellenv)"
+# brew analytics off
 
 nix build \
 	--experimental-features 'nix-command flakes' \

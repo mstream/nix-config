@@ -1,8 +1,6 @@
 _: {
   homebrew = {
-    brews = [
-      "kubefwd"
-    ];
+    brews = [ ];
     casks = [
       "discord"
       "docker"
@@ -12,7 +10,6 @@ _: {
       "intellij-idea"
       "microsoft-teams"
       "slack"
-      "spotify"
       "steam"
       "thunderbird"
     ];
@@ -25,15 +22,9 @@ _: {
       lockfiles = false;
     };
     onActivation = {
-      autoUpdate = true;
+      autoUpdate = false;
       cleanup = "zap";
-      upgrade = true;
+      upgrade = false;
     };
-    taps = [
-      "homebrew/core"
-      "homebrew/cask"
-      "homebrew/cask-drivers"
-      "txn2/tap"
-    ];
   };
 }

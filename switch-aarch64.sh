@@ -1,5 +1,5 @@
 #! /usr/bin/env bash
 
-set -e
+set -e -E
 
-./switch.sh aarch64-darwin
+./scripts/switch.sh aarch64-darwin
