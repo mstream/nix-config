@@ -2,38 +2,29 @@
   description = "Mstreams's Nix Environment";
 
   inputs = {
-    darwin = {
-      url = "github:LnL7/nix-darwin/master";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    easy-purescript-nix = {
-      url = "github:justinwoo/easy-purescript-nix";
-      flake = false;
-    };
-    flake-utils.url = "github:numtide/flake-utils";
-    homebrew-core = {
-      url = "github:homebrew/homebrew-core";
-      flake = false;
-    };
-    homebrew-bundle = {
-      url = "github:homebrew/homebrew-bundle";
-      flake = false;
-    };
-    homebrew-cask = {
-      url = "github:homebrew/homebrew-cask";
-      flake = false;
-    };
-    home-manager = {
-      url = "github:nix-community/home-manager/release-23.05";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";
-    nixpkgs.url = "github:nixos/nixpkgs/23.05";
-    nur.url = "github:nix-community/NUR";
+    nix-chad.url = "github:mstream/nix-chad/main";
   };
 
-  outputs = inputs:
-    {
-      darwinConfigurations = import ./lib/mk-darwin-config.nix inputs;
-    };
+  outputs = { nix-chad, ... }:
+    let
+      config =
+        {
+          # An ID of a key to be used for GPG signing by default.
+          # This is expected to be different for individuals.
+          # The key is not part of this repository and has to be provided
+          # manually. 
+          defaultGpgKey = "BE318F09150F6CB0724FFEC0319EE1D7FC029354";
+
+          # A desired font size in tools that have a mean to set it fixed. 
+          fontSize = 24;
+
+          # Install homebrew and let it manage propertiary software.
+          manageHomebrew = true;
+
+          # This should be set to the desired user name.
+          username = "mstream";
+        };
+      system = "aarch64-darwin";
+    in
+    nix-chad.lib.${system}.chad config;
 }

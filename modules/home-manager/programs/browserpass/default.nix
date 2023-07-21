@@ -1,1 +1,0 @@
-{ browsers = [ "firefox" ]; enable = true; }
