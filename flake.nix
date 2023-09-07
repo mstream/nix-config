@@ -10,7 +10,18 @@
       config =
         {
           defaultGpgKey = "BE318F09150F6CB0724FFEC0319EE1D7FC029354";
-          fontSize = 24;
+          extraCasks = [
+            "brave-browser"
+            "discord"
+            "inkscape"
+            "intellij-idea"
+            "microsoft-teams"
+            "slack"
+            "steam"
+            "vlc"
+          ];
+          extraPackages = [ "cowsay" ];
+          fontSize = 12;
           homeDirectories = [
             "Development/exercises"
             "Development/presentations"
