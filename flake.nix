@@ -14,7 +14,38 @@
             "steam"
             "vlc"
           ];
-          extraPackages = [ "cowsay" ];
+          extraPackages = [
+            "awscli"
+            "aws-sam-cli"
+            "colima"
+            "deno"
+            "dhall"
+            "discord"
+            "docker"
+            "exercism"
+            "ffmpeg"
+            "gimp"
+            "git-crypt"
+            "gradle"
+            "heroku"
+            "inkscape"
+            "jdk"
+            "kubectl"
+            "lua5_4"
+            "maven"
+            "nodejs"
+            "pandoc"
+            "perl"
+            "pwgen"
+            "purescript"
+            "qemu"
+            "slack"
+            "teams"
+            "xmlformat"
+            "xz"
+            "yarn"
+            "zoom-us"
+          ];
           firefoxBookmarks =
             [
               {
