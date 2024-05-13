@@ -87,16 +87,16 @@
         "nur": "nur"
       },
       "locked": {
-        "lastModified": 1715587548,
-        "narHash": "sha256-wJGg5ZTDCKBuIEmEtS7/C8tCdPOlxLDk6xJXybbVEGo=",
-        "ref": "main",
-        "rev": "0d5d256c83ba99008053d33f077e1725f1abeabb",
+        "lastModified": 1715589551,
+        "narHash": "sha256-tYgnX4cmcJO3ciB9eaI0afklJMdd0lx7zWWkJYzBeG4=",
+        "ref": "vim-tabs",
+        "rev": "9b2f4c588efab72ebeb3a326311fd5e807be58e0",
         "shallow": true,
         "type": "git",
         "url": "file:../nix-chad"
       },
       "original": {
-        "ref": "main",
+        "ref": "vim-tabs",
         "shallow": true,
         "type": "git",
         "url": "file:../nix-chad"
