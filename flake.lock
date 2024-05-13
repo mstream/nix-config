@@ -48,11 +48,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1714043624,
-        "narHash": "sha256-Xn2r0Jv95TswvPlvamCC46wwNo8ALjRCMBJbGykdhcM=",
+        "lastModified": 1715381426,
+        "narHash": "sha256-wPuqrAQGdv3ISs74nJfGb+Yprm23U/rFpcHFFNWgM94=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "86853e31dc1b62c6eeed11c667e8cdd0285d4411",
+        "rev": "ab5542e9dbd13d0100f8baae2bc2d68af901f4b4",
         "type": "github"
       },
       "original": {
@@ -87,10 +87,10 @@
         "nur": "nur"
       },
       "locked": {
-        "lastModified": 1714735488,
-        "narHash": "sha256-P2hRurdAAttO5qaiUTz7LfqfDJ/fBczYNE+jLC7WtrE=",
+        "lastModified": 1715587548,
+        "narHash": "sha256-wJGg5ZTDCKBuIEmEtS7/C8tCdPOlxLDk6xJXybbVEGo=",
         "ref": "main",
-        "rev": "060be22b14afa9a041015968a9b1f169df88b98a",
+        "rev": "0d5d256c83ba99008053d33f077e1725f1abeabb",
         "shallow": true,
         "type": "git",
         "url": "file:../nix-chad"
@@ -120,11 +120,11 @@
     },
     "nur": {
       "locked": {
-        "lastModified": 1714717703,
-        "narHash": "sha256-3MEsNmfuo/2kmmCyMmN5k+0JSZvWX5vCdpHZipjuTYI=",
+        "lastModified": 1715586674,
+        "narHash": "sha256-pHMnb1rrrAQCZrA0ViZZ2vUdDmuPI63Ux1PP1bzGUjY=",
         "owner": "nix-community",
         "repo": "NUR",
-        "rev": "24435c8cec42712d7447f1d5f477cc688cc103ed",
+        "rev": "fb6c5bbf8da07e8cffbe0382208b4a027bf4f749",
         "type": "github"
       },
       "original": {
