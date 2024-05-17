@@ -7,39 +7,39 @@
     let
       config = {
         browser = { bookmarks = [ ]; };
-        extraPackages = [
-          "awscli"
-          "aws-sam-cli"
-          "colima"
-          "deno"
-          "dhall"
-          "discord"
-          "docker"
-          "exercism"
-          "ffmpeg"
-          "gimp"
-          "git-crypt"
-          "gradle"
-          "graphviz"
-          "heroku"
-          "inkscape"
-          "jdk"
-          "kubectl"
-          "lua5_4"
-          "maven"
-          "nodejs"
-          "pandoc"
-          "perl"
-          "pwgen"
-          "purescript"
-          "qemu"
-          "slack"
-          "teams"
-          "xmlformat"
-          "xz"
-          "yarn"
-          "zoom-us"
-        ];
+        extraPackages = pkgs:
+          with pkgs; [
+            awscli
+            aws-sam-cli
+            colima
+            deno
+            dhall
+            discord
+            docker
+            exercism
+            ffmpeg
+            gimp
+            git-crypt
+            gradle
+            graphviz
+            heroku
+            inkscape
+            jdk
+            kubectl
+            lua5_4
+            maven
+            pandoc
+            perl
+            pwgen
+            purescript
+            qemu
+            slack
+            teams
+            xmlformat
+            xz
+            yarn
+            zoom-us
+          ];
         fontSize = 12;
         gpg = { defaultKey = "BE318F09150F6CB0724FFEC0319EE1D7FC029354"; };
         keyboard = {
@@ -48,9 +48,16 @@
         };
         manageWindows = {
           enable = true;
-          exclusions = [ "Cisco Secure Client" "Dialog" ];
+          exclusions = [
+            { app = "^Cisco Secure Client$"; }
+            {
+              app = "^Dialog$";
+              title = "^Dialog$";
+            }
+          ];
         };
         terminal = {
+          abbreviations = { };
           keyBindings = [ ];
           zshInitExtra = "";
         };
