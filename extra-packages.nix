@@ -1,0 +1,32 @@
+pkgs: with pkgs; [
+  awscli
+  colima
+  deno
+  dhall
+  discord
+  docker
+  exercism
+  ffmpeg
+  gimp
+  git-crypt
+  gradle
+  graphviz
+  heroku
+  inkscape
+  jdk
+  kubectl
+  lua5_4
+  maven
+  pandoc
+  perl
+  pwgen
+  purescript
+  qemu
+  slack
+  teams
+  transmission
+  xmlformat
+  xz
+  yarn
+  zoom-us
+]

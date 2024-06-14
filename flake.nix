@@ -1,7 +1,7 @@
 {
   description = "My Nix MacOS Environment";
   inputs = {
-    nix-chad.url = "git+file:../nix-chad?ref=nvim-refactor&shallow=1";
+    nix-chad.url = "git+file:../nix-chad?ref=bookmarks&shallow=1";
   };
 
   outputs =
@@ -9,41 +9,10 @@
     let
       config = {
         browser = {
-          bookmarks = [ ];
+          bookmarks = import ./bookmarks.nix;
+          extraExtensions = import ./extra-extensions.nix;
         };
-        extraPackages =
-          pkgs: with pkgs; [
-            awscli
-            colima
-            deno
-            dhall
-            discord
-            docker
-            exercism
-            ffmpeg
-            gimp
-            git-crypt
-            gradle
-            graphviz
-            heroku
-            inkscape
-            jdk
-            kubectl
-            lua5_4
-            maven
-            pandoc
-            perl
-            pwgen
-            purescript
-            qemu
-            slack
-            teams
-            transmission
-            xmlformat
-            xz
-            yarn
-            zoom-us
-          ];
+        extraPackages = import ./extra-packages.nix;
         fontSize = 12;
         gpg = {
           defaultKey = "BE318F09150F6CB0724FFEC0319EE1D7FC029354";
