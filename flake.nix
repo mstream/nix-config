@@ -1,7 +1,7 @@
 {
   description = "My Nix MacOS Environment";
   inputs = {
-    nix-chad.url = "git+file:../nix-chad?ref=nvim-refactor&shallow=1";
+    nix-chad.url = "git+file:../nix-chad?ref=main&shallow=1";
   };
 
   outputs =
