@@ -38,7 +38,6 @@
             qemu
             slack
             teams
-            transmission
             xmlformat
             xz
             yarn
