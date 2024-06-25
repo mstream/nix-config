@@ -29,6 +29,14 @@ let
         name = "TOP Sky Prod";
         url = topUrl "top.telem.prod-aws.ottlocal.sky";
       }
+      {
+        name = "Top Summer Stage";
+        url = topUrl "top-sum-stage.telemetry.nbcuott.com";
+      }
+      {
+        name = "Top Summer Prod";
+        url = topUrl "top-sum-prod.telemetry.nbcuott.com";
+      }
     ];
   };
 in
@@ -48,6 +56,10 @@ in
       {
         name = "Core Platform Docs";
         url = "https://core-docs.dev.ce.eu-central-1-aws.npottdc.sky/docs/tenant-wiki/";
+      }
+      {
+        name = "Core Platform Grafana";
+        url = "https://grafana.tools.cosmic.sky/?orgId=1";
       }
     ];
   }
