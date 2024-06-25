@@ -1,7 +1,7 @@
 {
   description = "My Nix MacOS Environment";
   inputs = {
-    nix-chad.url = "git+file:../nix-chad?ref=bookmarks&shallow=1";
+    nix-chad.url = "git+file:../nix-chad?ref=main&shallow=1";
   };
 
   outputs =
@@ -9,8 +9,11 @@
     let
       config = {
         browser = {
-          bookmarks = import ./bookmarks.nix;
+          bookmarks = import ./bookmarks;
           extraExtensions = import ./extra-extensions.nix;
+        };
+        editor = {
+          lineNumbering = "relative";
         };
         extraPackages = import ./extra-packages.nix;
         fontSize = 12;
