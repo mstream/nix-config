@@ -88,16 +88,16 @@
         "nur": "nur"
       },
       "locked": {
-        "lastModified": 1718811302,
-        "narHash": "sha256-G1Qzo4KnvV3WKobfHZkQziysQaPm7kJxq5DJMy17bBo=",
-        "ref": "bookmarks",
-        "rev": "09a1fe147c5c1f917bf149e6e9d4a4c251aa8931",
+        "lastModified": 1719216528,
+        "narHash": "sha256-+c5wIZQC8hNIExCueVBWrA+UGGSDV4Cbhndj16dRbBA=",
+        "ref": "main",
+        "rev": "98b3a73f6867da57191b21a9aadc35ec311e923a",
         "shallow": true,
         "type": "git",
         "url": "file:../nix-chad"
       },
       "original": {
-        "ref": "bookmarks",
+        "ref": "main",
         "shallow": true,
         "type": "git",
         "url": "file:../nix-chad"
