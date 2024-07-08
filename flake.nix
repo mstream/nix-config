@@ -21,6 +21,7 @@
           defaultKey = "BE318F09150F6CB0724FFEC0319EE1D7FC029354";
         };
         keyboard = {
+          disableKeyRepeat = true;
           remapCapsLock = true;
           remapLeftArrow = true;
         };
@@ -35,7 +36,7 @@
           ];
         };
         terminal = {
-          abbreviations = { };
+          extraAbbreviations = import ./extra-abbreviations;
           keyBindings = [ ];
           zshInitExtra = "";
         };
