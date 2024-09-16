@@ -9,6 +9,7 @@ pkgs: with pkgs; [
   ffmpeg
   gimp
   git-crypt
+  git-cola
   gradle
   graphviz
   heroku
