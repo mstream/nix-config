@@ -17,6 +17,15 @@
         };
         extraPackages = import ./extra-packages.nix;
         fontSize = 12;
+        git = {
+          alternativeGitIdentities = [
+            {
+              repositoryPath = "/Users/mstream/Development/projects/sky-uk/spc-kraken/";
+              sshKeyPath = "/Users/mstream/.ssh/sky_id_rsa";
+              userEmail = "maciej.laciak@sky.uk";
+            }
+          ];
+        };
         gpg = {
           defaultKey = "BE318F09150F6CB0724FFEC0319EE1D7FC029354";
         };
@@ -35,7 +44,7 @@
           ];
         };
         terminal = {
-          abbreviations = { };
+          extraAbbreviations = { };
           keyBindings = [ ];
           zshInitExtra = "";
         };

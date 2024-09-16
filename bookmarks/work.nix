@@ -109,6 +109,10 @@ in
         name = "Core Platform Grafana";
         url = "https://grafana.tools.cosmic.sky/?orgId=1";
       }
+      {
+        name = "VDC Portal";
+        url = "https://portal.vdc.cloud.sky/automation/#/service/catalog";
+      }
     ];
   }
   awsDirectory
