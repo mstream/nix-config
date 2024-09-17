@@ -110,8 +110,20 @@ in
         url = "https://grafana.tools.cosmic.sky/?orgId=1";
       }
       {
+        name = "Sky Today";
+        url = "https://skyglobal.sharepoint.com/sites/SkyToday";
+      }
+      {
+        name = "SPC Kraken GitHub repository";
+        url = "https://github.com/NBCUDTC/spc-kraken";
+      }
+      {
         name = "VDC Portal";
         url = "https://portal.vdc.cloud.sky/automation/#/service/catalog";
+      }
+      {
+        name = "Workday";
+        url = "https://wd3.myworkday.com/sky/d/home.html";
       }
     ];
   }
