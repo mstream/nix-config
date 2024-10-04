@@ -59,6 +59,14 @@ let
         tags = [ "nix" ];
         url = "https://nur.nix-community.org/";
       }
+      {
+        name = "NixVim Options Search";
+        tags = [
+          "nix"
+          "nixvim"
+        ];
+        url = "https://nix-community.github.io/nixvim/search/";
+      }
     ];
   };
 

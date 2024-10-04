@@ -3,14 +3,12 @@ pkgs: with pkgs; [
   colima
   deno
   dhall
-  discord
   docker
   exercism
   ffmpeg
   gimp
   git-crypt
   git-cola
-  gradle
   graphviz
   heroku
   inkscape
@@ -18,16 +16,16 @@ pkgs: with pkgs; [
   kubectl
   lua5_4
   maven
+  openshot-qt
   pandoc
   perl
+  pinentry-tty
+  pstree
   pwgen
   purescript
   qemu
-  slack
-  teams
-  transmission
+  transmission_4
   xmlformat
   xz
   yarn
-  zoom-us
 ]
