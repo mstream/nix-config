@@ -44,8 +44,14 @@
             }
           ];
         };
+        software = {
+          openSourceOnly = true;
+        };
         terminal = {
-          extraAbbreviations = import ./extra-abbreviations;
+          abbreviations = {
+            enable = false;
+            extraAbbreviations = import ./extra-abbreviations;
+          };
           keyBindings = [ ];
           zshInitExtra = "";
         };
