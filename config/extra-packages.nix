@@ -6,7 +6,7 @@ pkgs: with pkgs; [
   docker
   exercism
   ffmpeg
-  gimp
+  gimp2
   git-crypt
   git-cola
   graphviz
@@ -16,7 +16,6 @@ pkgs: with pkgs; [
   kubectl
   lua5_4
   maven
-  openshot-qt
   pandoc
   perl
   pinentry-tty
