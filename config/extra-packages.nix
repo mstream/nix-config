@@ -6,7 +6,7 @@ pkgs: with pkgs; [
   docker
   exercism
   ffmpeg
-  gimp
+  gimp2
   git-crypt
   git-cola
   graphviz
@@ -18,10 +18,12 @@ pkgs: with pkgs; [
   maven
   pandoc
   perl
+  pinentry-tty
+  pstree
   pwgen
   purescript
   qemu
-  transmission
+  transmission_4
   xmlformat
   xz
   yarn

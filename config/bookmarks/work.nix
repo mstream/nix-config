@@ -110,6 +110,10 @@ in
         url = "https://grafana.tools.cosmic.sky/?orgId=1";
       }
       {
+        name = "MS Outlook";
+        url = "https://outlook.office.com/";
+      }
+      {
         name = "Sky Today";
         url = "https://skyglobal.sharepoint.com/sites/SkyToday";
       }
