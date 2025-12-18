@@ -49,16 +49,16 @@
         "yants": "yants"
       },
       "locked": {
-        "lastModified": 1764968256,
-        "narHash": "sha256-hj5SEe2ObCKP5Q8dNgyFHqDtfv/1eq1Xb6C2lAIqpfw=",
-        "ref": "next",
-        "rev": "a30eb75051fa7d5999d586a288d11a305d0147e6",
+        "lastModified": 1765972532,
+        "narHash": "sha256-7MXSagi+GWMpwaPKONJrh7iZJbPuiKUU/jLG1B7UcFM=",
+        "ref": "next-1",
+        "rev": "541556ad5a3501c0f8db6cd30c54d81a2cec8aaa",
         "shallow": true,
         "type": "git",
         "url": "file:../nix-chad"
       },
       "original": {
-        "ref": "next",
+        "ref": "next-1",
         "shallow": true,
         "type": "git",
         "url": "file:../nix-chad"
@@ -66,16 +66,16 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1764878468,
-        "narHash": "sha256-DuT+5ZSC4n3s6+8mcecubdbLYzqzExWoupZJeTfPEkk=",
+        "lastModified": 1765357879,
+        "narHash": "sha256-H5zJQaO8jllsHGFgxRJQFCarLmMmJWMACHoCB5M7kvA=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "77e2319b4114312eeeebfbc72bed0ae7fccfb112",
+        "rev": "62cac6c5d5b70601ff3da3e6573cb2d461f86953",
         "type": "github"
       },
       "original": {
         "owner": "nixos",
-        "ref": "77e2319b4114312eeeebfbc72bed0ae7fccfb112",
+        "ref": "62cac6c5d5b70601ff3da3e6573cb2d461f86953",
         "repo": "nixpkgs",
         "type": "github"
       }

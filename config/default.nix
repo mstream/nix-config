@@ -39,6 +39,7 @@
     zshInitExtra = "";
   };
   user = {
+    email = "maciej.laciak@gmail.com";
     homeDirectories = [
       "Development/exercises"
       "Development/presentations"
