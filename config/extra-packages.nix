@@ -24,6 +24,8 @@ pkgs: with pkgs; [
   purescript
   qemu
   transmission_4
+  wireguard-tools
+  wireguard-ui
   xmlformat
   xz
   yarn
