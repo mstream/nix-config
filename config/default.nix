@@ -4,6 +4,7 @@
     extraExtensions = import ./extra-extensions.nix;
   };
   editor = {
+    extremeMeasures = true;
     lineNumbering = "relative";
   };
   extraPackages = import ./extra-packages.nix;

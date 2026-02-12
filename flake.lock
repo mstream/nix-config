@@ -49,16 +49,16 @@
         "yants": "yants"
       },
       "locked": {
-        "lastModified": 1769429601,
-        "narHash": "sha256-+FfSiHd3/kg80C79+DnUZ59riLl383YoyJmXSoOkTEA=",
-        "ref": "main",
-        "rev": "c9ba887250cc518a2ee7deb51a62b3118330657f",
+        "lastModified": 1770888261,
+        "narHash": "sha256-CLBKp4fV7PHyFBve3M3x7t3Rlb6iQV9R8qeEm7/JNqM=",
+        "ref": "next-5",
+        "rev": "8c47bfcf6e85e74fd932b6e14f43086d76c5403c",
         "shallow": true,
         "type": "git",
         "url": "file:../nix-chad"
       },
       "original": {
-        "ref": "main",
+        "ref": "next-5",
         "shallow": true,
         "type": "git",
         "url": "file:../nix-chad"
